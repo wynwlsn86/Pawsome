@@ -4,7 +4,11 @@
   "description": "Non profit pet adoption site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js",
+    "db:init": "dropdb --if-exists express_passport_db && createdb express_passport_db",
+    "db:reset": "node ./scripts/resetDb.js",
+    "db:seed": "node ./scripts/seedDb.js",
+    "db:create": "createdb pawDb"
   },
   "repository": {
     "type": "git",
