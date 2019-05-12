@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
-    "db:init": "dropdb --if-exists express_passport_db && createdb express_passport_db",
+    "db:init": "dropdb --if-exists pawDb && createdb pawDb",
     "db:reset": "node ./scripts/resetDb.js",
     "db:seed": "node ./scripts/seedDb.js",
     "db:create": "createdb pawDb"
