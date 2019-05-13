@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class AddPet extends Component {
     constructor () {
@@ -15,15 +16,32 @@ class AddPet extends Component {
             image: null
         }
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.buind(this);
+        // this.handleSubmit = this.handleSubmit.buind(this);
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async(e) => {
+        e.preventDefault();
+        let newPet = {
+            name: this.state.name,
+            age: this.state.age,
+            species: this.state.species,
+            color: this.state.color,
+            gender: this.state.gender,
+            breed: this.state.breed,
+            medical: this.state.breed,
+            bio: this.state.bio,
+            image: this.state.image
+        }
 
-            
+        
+        await axios('http://localhost5000/pets')
     }
     handleChange = (e) => {
-
+        const el = e.target;
+        const name = el.name;
+        const value = el.value;
+        console.log(name, value)
+        this.setState({[name]: value});
     }
 
     render() {
@@ -36,6 +54,7 @@ class AddPet extends Component {
                         placeholder='Pet Name'
                         id='name'
                         name='name'
+                        onChange={this.handleChange}
                     />
                     <label>Age:</label>
                     <input 
@@ -43,6 +62,7 @@ class AddPet extends Component {
                         placeholder='Age'
                         id='age'
                         name='age'
+                        onChange={this.handleChange}
                     />
                     <label>Species:</label>
                     <input 
@@ -50,6 +70,7 @@ class AddPet extends Component {
                         placeholder='Species'
                         id='species'
                         name='species'
+                        onChange={this.handleChange}
                     />
                     <label>Color:</label>
                     <input 
@@ -57,6 +78,7 @@ class AddPet extends Component {
                         placeholder='Color'
                         id='color'
                         name='color' 
+                        onChange={this.handleChange}
                     />
                     <label>Gender:</label>
                     <input 
@@ -64,6 +86,7 @@ class AddPet extends Component {
                         placeholder='Gender'
                         id='gender'
                         name='gender'
+                        onChange={this.handleChange}
                     />
                     <label>Breed:</label>
                     <input 
@@ -71,6 +94,7 @@ class AddPet extends Component {
                         placeholder='Breed'
                         id='breed'
                         name='breed'
+                        onChange={this.handleChange}
                     />
                     <label>Medical:</label>
                     <input 
@@ -78,6 +102,7 @@ class AddPet extends Component {
                         placeholder='Fixed'
                         id='medical'
                         name='medical'
+                        onChange={this.handleChange}
                     />
                     <label>Bio:</label>
                     <input 
@@ -85,6 +110,7 @@ class AddPet extends Component {
                         placeholder='Biography'
                         id='biography'
                         name='biography'
+                        onChange={this.handleChange}
                     />
                     <label>Image:</label>
                     <input 
@@ -92,6 +118,7 @@ class AddPet extends Component {
                         placeholder='Image File'
                         id='image'
                         name='image'
+                        onChange={this.handleChange}
                     />
                     <button>Submit</button>
                 </form>
