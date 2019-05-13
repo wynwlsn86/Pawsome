@@ -10,7 +10,8 @@ const api = axios.create({
 export const getAllPets = async () => {
     try{
         const resp = await api.get('/');
-        console.log(resp.data.pets);
+        console.log(resp.data);
+        return resp.data;
     }
     catch (e) {
         console.log(e.message);
@@ -20,7 +21,7 @@ export const getAllPets = async () => {
 export const addPet = async (data) => {
     try{
         const resp = api.post('/', data);
-        console.log(resp.data.pets);
+        console.log(resp.data);
         return resp.data.pets;
         
     }
