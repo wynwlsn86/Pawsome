@@ -6,7 +6,7 @@ const pets = [
         "breed": 'tabby',
         "color": 'brown',
         "gender": 'm/f',
-        "bio": "Bonded brother and sister (need to stay together). Born in foster care on Easter Sunday but unfortunately looked over as kittens and have spent their entire lives with foster parents. Peter can be shy but comes out of his shell with time and love. Flopsy is a love bug, wants to be the center of attention, but is always looking out for her brother."
+        "bio": "Bonded brother and sister (need to stay together). Born in foster care on Easter Sunday but unfortunately looked over as kittens and have spent their entire lives with foster parents. Peter can be shy but comes out of his shell with time"
     },
     {
         "name":'Jane',
@@ -15,7 +15,7 @@ const pets = [
         "breed": 'calico',
         "color": 'dilute',
         "gender": 'f',
-        "bio": "Pawsome's longest resident of 3 years. Rescued from a hoarding situation with her newborn kittens (previously adopted). A very sweet and loving cat, loves to purr, head butt and be pet. Would make a perfect pet for any family. Good with other cats, cat friendly dogs and kids!"
+        "bio": "Pawsome's longest resident of 3 years. Rescued from a hoarding situation with her newborn kittens (previously adopted). A very sweet and loving cat, loves to purr, head butt and be pet. Would make a perfect pet for any family."
     },
     {
         "name":'Sammi',
@@ -23,7 +23,7 @@ const pets = [
         "age": '18 months',
         "breed": 'tabby calico',
         "gender": 'm',
-        "bio": "Sammi must be the only pet as she does not get along with other animals. As long as she is your one and only she is the sweetest girl. She would do best in a home that will allow her to have both indoor and safe outdoor access. She loves her people so much she refuses to share them."
+        "bio": "Sammi must be the only pet as she does not get along with other animals. As long as she is your one and only she is the sweetest girl. She would do best in a home that will allow her to have both indoor and safe outdoor access."
     },
     {
         "name":'Rizzo',
