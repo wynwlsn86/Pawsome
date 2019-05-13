@@ -23,7 +23,7 @@ const AuthUser = pawDb.define('authuser', {
     }
   })
 
-  const Pet = db.define('pets', {
+  const Pet = pawDb.define('pets', {
     name: {
       type: Sequelize.STRING,
       allowNull: false
@@ -31,6 +31,10 @@ const AuthUser = pawDb.define('authuser', {
     species: {
       type: Sequelize.STRING,
       allowNull: false
+    },
+    color: {
+        type: Sequelize.STRING,
+        allowNull: true
     },
     gender: {
       type: Sequelize.STRING,
@@ -62,12 +66,77 @@ const AuthUser = pawDb.define('authuser', {
     }
   })
 
-  const Visit = db.define('pets', {
- 
-  })
+   const Visit = pawDb.define('visits', {
+       adoption_date: {
+           type:Sequelize.DATE,
+           allowNull: true
+       },
+       visit_date: {
+           type: Sequelize.DATE,
+           allowNull: false
+       },
+       pass: {
+           type: Sequelize.BOOLEAN,
+           allowNull: false
+       },
+       comments: {
+           type: Sequelize.STRING,
+           allowNull: true
+       } 
+   })
+
+   const Adopter = pawDb.define('adopters', {
+    first_name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    vlast_name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    phone: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    email: {
+        type: Sequelize.STRING,
+        allowNull: false
+    } ,
+    address: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    city:{
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    state: {
+        type: Sequelize.STRING,
+        allownull: false
+    },
+    zip: {
+        type: Sequelize.INTEGER,
+        allownull: false
+    },
+    family_size_int: {
+        type: Sequelize.INTEGER,
+        allownull: true
+    },
+    house_size_sqft: {
+        type: Sequelize.INTEGER,
+        allownull: true
+    },
+    animal_id:{
+        type: Sequelize.INTEGER,
+        allowNull: true
+    }
+})
 
 
   module.exports = {
     pawDb,
-    AuthUser
+    AuthUser,
+    Pet,
+    Visit,
+    Adopter
   }
