@@ -1,7 +1,7 @@
 # Pawsome
 Non profit pet adoption site
 
-<ul>Project Description</ul>
+<ul><h2>Project Description</h2></ul>
 A brief explanation of the project you'll be building with the objective described in non-technical language.
 
 Pawsome is an application for rescued animal adoption to assist shelters with organizing and presenting data about their pets for potential adopters. 
@@ -10,19 +10,19 @@ Adopters want a clear and simple search experience to find the right addition fo
 
 Shelters want to rapidly add new rescues to their system, and track the pets that have been adopted.
 
-<ul>An explanation of the major challenges you expect to face while building this app and how you foresee your team solving them.</ul>
+<ul><h2>An explanation of the major challenges you expect to face while building this app and how you foresee your team solving them.</h2></ul>
 
 At the time of writing this proposal, I have not seen the data used by the shelter, but it will presumably be difficult and time-consuming to construct an API from it. 
 
 A way to solve this is to determine which attributes are most necessary and leave the rest, and only write for a limited set of animals as a proof of concept.
 
-<ul> A section clearly defining MVP and POST MVP.</ul>
+<ul> <h2>A section clearly defining MVP and POST MVP.</h2></ul>
 
 MVP: Pet Gallery, Search, Contact Us form, Authorization Login for adding/removing rescues, make our own API based on shelter data
 
 POST-MVP: All of the above + search with filters, contact us form with email auto-reply, donation management, and a scheduler for adoption checkups (email notifications for a house  visit)
 
-<ul>Feature List - List of pieces of functionality of the app. These will go into the trello board.</ul>
+<ul><h2>Feature List - List of pieces of functionality of the app. These will go into the trello board.</h2></ul>
 
 -Authorization for shelter admin to add and remove rescues from page, and track the owner info for each adopted rescue
 -Search rescue gallery, which displays info about each rescue (age, breed, description, etc).
@@ -41,7 +41,7 @@ https://drive.google.com/file/d/1YmRFXTSfLCeRGGnyPsYxiLBBscfV-tB4/view?usp=shari
 
 Component Hierarchy Wireframes should be broken into components which then should be described in a component hierarchy.
 
-<ul>List Dependencies link to any project dependencies (e.g. 3rd party APIs, libraries, linter, etc).</ul>
+<ul><h2>List Dependencies link to any project dependencies (e.g. 3rd party APIs, libraries, linter, etc).</h2></ul>
 
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
