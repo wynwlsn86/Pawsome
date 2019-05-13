@@ -79,7 +79,7 @@ Component Hierarchy Wireframes should be broken into components which then shoul
 
 https://imgur.com/a/v4BSEI5
 
-***example of json object***
+***example of json object from pets table***
 
 ````[
     {
