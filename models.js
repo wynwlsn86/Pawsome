@@ -148,11 +148,15 @@ const Visit = pawDb.define('visits', {
 })
 
 
-Pet.hasMany(Visit, {onDelete: 'cascade'});
+Pet.hasMany(Visit, {
+    through: 'pets_to_visits_xref',
+    foreignKey: animal_id});
 Visit.belongsTo(Pet);
 
 
-Adopter.hasMany(Pet, {onDelete: 'cascade'})
+Adopter.hasMany(Pet, {
+    through: 'adopters_to_pets',
+    foreignKey: adopter_id})
 Pet.belongsTo(Adopter);
 
 
