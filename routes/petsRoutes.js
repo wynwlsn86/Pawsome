@@ -42,7 +42,7 @@ petRouter.put('/:id', async (req, res) => {
       const id = req.params.id;
       const selectedPet = await Pet.findByPk(id);
       if (selectedPet) await selectedPet.update(req.body);
-      res.json({selectedPet});
+      res.json('update success');
     } catch(e) {
       res.json(console.log(e + 'oh no so sad man'))
     }
