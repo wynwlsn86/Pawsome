@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
-const { petRouter } = require('./routes/postRouter');
+const { petRouter } = require('./routes/petsapi');
 //const passport = require('passport') tuesday
 
 
@@ -21,7 +21,7 @@ app.use('/pets', petRouter)
 
 app.get('/', async (req, res) => {
     try {
-      res.send('hi wayne - hi tara')
+      res.send('los pawesomes')
     } catch (e) {
       res.send(e)
     }

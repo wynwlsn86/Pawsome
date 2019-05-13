@@ -6,9 +6,9 @@ const { Pet } = require('../models');
 // represents localhost:PORT/pets/
 
 
-petRouter.get('/pets', async (req, res) => {
+petRouter.get('/', async (req, res) => {
   try {
-    const allPets = await Post.findAll();
+    const allPets = await Pet.findAll();
     res.send(allPets);
   } catch (e) {
     console.log(e.message);
@@ -17,7 +17,7 @@ petRouter.get('/pets', async (req, res) => {
 
 
 // represents localhost:PORT/posts/
-petRouter.post('/pets', async (req, res) => {
+petRouter.post('/', async (req, res) => {
   try {
     const postedPet = await Pet.create(req.body);
     res.send(postedPet);
@@ -26,7 +26,7 @@ petRouter.post('/pets', async (req, res) => {
   }
 });
 
-petRouter.get('/pets/:id', async (req, res) => {
+petRouter.get('/:id', async (req, res) => {
   try {
     const lePet = await PPet.findByPk(req.params.id);
     res.send(lePet);
@@ -36,7 +36,7 @@ petRouter.get('/pets/:id', async (req, res) => {
 });
 
 // represents localhost:PORT/posts/:id
-petRouter.delete('/pets/:id', async (req, res) => {
+petRouter.delete('/:id', async (req, res) => {
   try {
     const deleteIt = await Pet.findByPk(req.params.id);
     await deleteIt.destroy();
