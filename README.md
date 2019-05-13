@@ -43,6 +43,8 @@ Weekly schedule
   05/15     |- [ ] login page   | - [ ] auth          |  - [ ] auth      	|
   05/15     |- [ ] touchups     | - [ ] touchups      | - [ ] touchups    |
 
+
+
 api routes
 <ul><h2>ERD</ul></h2>
 
