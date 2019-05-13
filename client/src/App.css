@@ -15,6 +15,16 @@
   padding: 20px 0 20px 0;
 }
 
+.Footer {
+  border: solid black;
+}
+
+.Footer ul, p {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
