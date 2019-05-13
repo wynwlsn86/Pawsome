@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
-const { petRouter } = require('./routes/petsapi');
+const { petRouter } = require('./routes/petsRoutes');
 //const passport = require('passport') tuesday
 
 

@@ -5,7 +5,7 @@ const { Pet } = require('../models');
 
 // represents localhost:PORT/pets/
 
-
+//get all those pets yeah
 petRouter.get('/', async (req, res) => {
   try {
     const allPets = await Pet.findAll();
@@ -16,7 +16,7 @@ petRouter.get('/', async (req, res) => {
 });
 
 
-// represents localhost:PORT/posts/
+// post new pet
 petRouter.post('/', async (req, res) => {
   try {
     const postedPet = await Pet.create(req.body);
@@ -26,16 +26,29 @@ petRouter.post('/', async (req, res) => {
   }
 });
 
+//find one pet
 petRouter.get('/:id', async (req, res) => {
   try {
-    const lePet = await PPet.findByPk(req.params.id);
+    const lePet = await Pet.findByPk(req.params.id);
     res.send(lePet);
   } catch (e) {
     console.log(e.message);
   }
 });
 
-// represents localhost:PORT/posts/:id
+//update existing pets
+petRouter.put('/:id', async (req, res) => {
+    try {
+      const id = req.params.id;
+      const selectedPet = await Pet.findByPk(id);
+      if (selectedPet) await selectedPet.update(req.body);
+      res.json({selectedPet});
+    } catch(e) {
+      res.json(console.log(e + 'oh no so sad man'))
+    }
+  })
+
+// delete particular pet
 petRouter.delete('/:id', async (req, res) => {
   try {
     const deleteIt = await Pet.findByPk(req.params.id);
