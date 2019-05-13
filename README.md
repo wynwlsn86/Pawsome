@@ -29,7 +29,7 @@ POST-MVP: All of the above + search with filters, contact us form with email aut
 -Contact Us form 
 -Adoption Form (authorization for parents of successful adoptions to add themselves to the family_data table in the db.
 
-ERD
+<ul><h2>ERD</ul></h2>
 
 API Endpoint Documentations list of all of your servers routes, the structure of requests that you expect and the structure of responses they send.
 
