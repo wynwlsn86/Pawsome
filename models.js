@@ -1,5 +1,4 @@
 const Sequelize = require('sequelize');
-//const bcrypt = require('bcrypt'); tuesday
 
 
 const pawDb = new Sequelize({
@@ -44,15 +43,11 @@ const AuthUser = pawDb.define('authuser', {
         type: Sequelize.STRING,
         allowNull: true
     },
-    birthday: {
-        type: Sequelize.DATE,
-        allowNull: true
-    },
     age: {
         type: Sequelize.STRING,
         allowNull: true
     },
-    fixed: {
+    medical: {
         type: Sequelize.BOOLEAN,
         allowNull: true
     },
