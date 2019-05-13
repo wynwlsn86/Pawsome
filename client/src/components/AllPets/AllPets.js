@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
+import SelectedPet from '../selectedPet/SelectedPet';
+import PetList from '../PetList/PetList';
+
 
 class AllPets extends Component {
     constructor () {
@@ -17,17 +20,6 @@ class AllPets extends Component {
         this.setState({allPets});
     }
 
-//     fetchRestaurantsData = async () => {
-//         const restaurants = await fetchRestaurants();
-//         this.setState({
-//           restaurants
-//         })
-//         console.log('this is data', restaurants);
-//    }
-
-
-
-
     componentDidMount() {
         this.fetchAllPets();
     }
@@ -37,7 +29,11 @@ class AllPets extends Component {
     render() {
         return (
             <div>
-                <h1>test</h1>
+                <SelectedPet 
+                />
+                <PetList 
+                allPets={this.state.allPets}
+                />
             </div>
         );
     }
