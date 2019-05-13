@@ -48,7 +48,7 @@ const AuthUser = pawDb.define('authuser', {
         allowNull: true
     },
     medical: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.STRING,
         allowNull: true
     },
     bio: {

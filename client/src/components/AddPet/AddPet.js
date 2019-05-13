@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { addPet } from '../../services/petsApi'
 
 class AddPet extends Component {
     constructor () {
@@ -13,7 +14,8 @@ class AddPet extends Component {
             breed: null,
             medical: null,
             bio: null,
-            image: null
+            image: null,
+            createdPet: false
         }
         this.handleChange = this.handleChange.bind(this);
         // this.handleSubmit = this.handleSubmit.buind(this);
@@ -32,10 +34,11 @@ class AddPet extends Component {
             bio: this.state.bio,
             image: this.state.image
         }
-
-        
-        await axios('http://localhost5000/pets')
+        await addPet(newPet);
+        this.setState({createdPet: true});
     }
+
+
     handleChange = (e) => {
         const el = e.target;
         const name = el.name;
@@ -47,7 +50,7 @@ class AddPet extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Name:</label>
                     <input 
                         type='input' 
