@@ -89,3 +89,30 @@ a {
   justify-content: space-evenly;
   list-style: none;
 }
+
+.Volunteer-form {
+  padding: 15px;
+  width: 400px;
+  border: 1px #eee solid;
+}
+
+
+.Volunteer-form label {
+  font-size: 20px;
+}
+
+.Volunteer-form input {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 3px;
+  padding: 5px;
+  display: block;
+}
+
+.Volunteer-form button {
+  font-size: 18px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5%;
+}
