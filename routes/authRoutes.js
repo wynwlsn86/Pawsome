@@ -1,28 +1,29 @@
-const express= require('express');
+const express = require('express');
 const authRouter = express.Router();
-const {passport, jwtSign } = require('../auth/auth');
+const { passport, jwtSign } = require('../auth/auth')
 
 
 authRouter.post('/login', async (req,res, next) => {
+    // res.status(200).json({message : 'So far so good'});
     passport.authenticate('login', async(err, user, info) => {
     try {
-        if(!user) {
-            const error = new Error('No username')
-            return next(error);
-        }
-      if (err) {
-        const error = new Error('Backend Error')
+      console.log('****************', err);
+      if (err || !user) {
+        const error = new Error('An Error Occurred')
         return next(error);
       }
 
-
       req.login(user, { session : false }, async (error) => {
         if ( error ) return next(error)
-        const { username, id } = user
-        const payload = { username, id }
+
+        const { email, id } = user
+        const payload = { email, id }
+
         const token = jwtSign(payload)
+        // return the user object and token
         return res.json({ user, token })
       })
+
     } catch(error) {
       return next(error)
 
@@ -34,12 +35,12 @@ authRouter.post('/signup', async (req,res,next) => {
     passport.authenticate('signup', async (err, user, info) => {
         try{
             if (!user || err ) {
-              let err = Error('Account not created');
+              let err = Error('Unable to create account');
               err.status = 400;
               return next(err);
             }
             console.log(user);
-            return res.json({message: "Account created"})
+            return res.json({message: "User Successfully Created"})
         }
         catch (e) {
             return next(e);
@@ -48,3 +49,5 @@ authRouter.post('/signup', async (req,res,next) => {
 })
 
 module.exports = authRouter;
+
+
