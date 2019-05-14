@@ -6,15 +6,20 @@ const {passport, jwtSign } = require('../auth/auth');
 authRouter.post('/login', async (req,res, next) => {
     passport.authenticate('login', async(err, user, info) => {
     try {
-      if (err || !user) {
+        if(!user) {
+            const error = new Error('No username')
+            return next(error);
+        }
+      if (err) {
         const error = new Error('Backend Error')
         return next(error);
       }
 
+
       req.login(user, { session : false }, async (error) => {
         if ( error ) return next(error)
         const { username, id } = user
-        const payload = { email, id }
+        const payload = { username, id }
         const token = jwtSign(payload)
         return res.json({ user, token })
       })

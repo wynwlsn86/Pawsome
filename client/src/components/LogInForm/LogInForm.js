@@ -21,9 +21,9 @@ class LogInForm extends Component {
     }
     async handleLogin() {
         try {
-            const { email, password} = this.state;
-            console.log(email, password);
-            const response = await login({email, password});
+            const { username, password} = this.state;
+            console.log(username, password);
+            const response = await login({username, password});
             console.log(response);
             this.setState({
                 isAuthenticated: true

@@ -18,7 +18,6 @@ passport.use(new JWTStrategy({
   jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken()
   }, 
   async(token, done) => {
-    console.log(`YOYOYO`)
     try {
       console.log('****** decoded token *****', token);
       const user = await User.findByPk(token.id);
@@ -70,8 +69,8 @@ passport.use('login', new LocalStrategy({
         return done(null, false, { message: 'User not found'})
       }
 
-      const validate = await bcrypt.compare(password, user.password);
-      console.log(`*** validate: ${validate} ***`)
+      // const validate = await bcrypt.compare(password, user.password);
+      // console.log(`*** validate: ${validate} ***`)
   
       if (!validate) {
         return done(null, false, { message: 'Wrong password'})
