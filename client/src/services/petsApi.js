@@ -22,13 +22,14 @@ export const addPet = async (data) => {
     try{
         const resp = await api.post('/', data);
         console.log(resp.data);
-        return resp
+        return resp      
     }
     catch(e){
         console.log(e.message)
     }
 }
 
+<<<<<<< HEAD
 // export const putPet = async (id, data) => {
 //     try{
 //         const selectedPet = await Pet.findByPk(id);
@@ -60,3 +61,14 @@ export const addPet = async (data) => {
 //       })
 
 
+=======
+export const putPet = async (id, data) => {
+    try{
+        const resp = await api.put(`/:(${id})`, data);
+        return resp.json
+    }
+    catch(e){
+        console.log(e.message)
+    }
+}
+>>>>>>> c7f01c719a9a074efcb94851a873de290ba72fde
