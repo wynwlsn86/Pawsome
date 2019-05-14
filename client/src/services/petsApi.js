@@ -30,19 +30,6 @@ export const addPet = async (data) => {
     }
 }
 
-<<<<<<< HEAD
-// export const putPet = async (id, data) => {
-//     try{
-//         const selectedPet = await Pet.findByPk(id);
-//         console.log(selectedPet)
-//         const resp = await api.put(`/:(${id})`, data);
-//         return resp.json
-//     }
-//     catch(e){
-//         console.log(e.message)
-//     }
-// }
-=======
 export const putPet = async (id, data) => {
     try{
         const resp = await api.put(`/:(${id})`, data);
@@ -52,4 +39,3 @@ export const putPet = async (id, data) => {
         console.log(e.message)
     }
 }
->>>>>>> decbb30db990c03995af94746c99d1495ece0a4e
