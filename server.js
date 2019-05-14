@@ -8,7 +8,6 @@ const {volRouter} = require('./routes/volunteersRoutes');
 const loggedInRoutes = require('./routes/loggedInRoutes');
 const passport = require('passport');
 const { authorized } = require('./auth/auth');
-const { volRouter } = require('./routes/volunteersRoutes');
 const { userRouter } = require('./routes/userRoutes');
 
 
