@@ -7,7 +7,7 @@ const pets = require('../data')
 
 
 // WAYNE or TARA
-// once decided upon - delete my const = fake.. variables. these are to ensure seed.js populates the tables with expected values.
+// once decided upon(and if i haven't done this) - delete my const = fake.. variables. these are to ensure seed.js populates the tables with expected values.
 
 const seedDb = async () => {
   try {
