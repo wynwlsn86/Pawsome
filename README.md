@@ -49,8 +49,9 @@ Weekly schedule
   Date      |  Tara           	|              Wayne	|           Chuck 	|
   05/13     |- [x] proposal	    |---	                |---               	|
   05/13     |- [x] wireframes  	|                    	|                  	|   
-  05/13     |- [ ] Header       |   - [ ] api routes  |   - [ ] api routes|   
-  05/13     |- [ ] Footer       |                    	|                 	|  
+  05/13     |- [x] Header       |   - [ ] api routes  |   - [ ] api routes|   
+  05/13     |- [x] Footer       |                    	|                 	|
+  05/13     |- [ ] Main         |                    	|                 	| 
   05/13     |- [ ] Add pet form |                    	|                 	|
   05/14     |- [ ] CRUD         | - [ ] CRUD        	|  - [ ] CRUD     	|
   05/14     |- [ ] pet gallery  | - [ ] pet gallery 	|  - [ ] pet gallery|
