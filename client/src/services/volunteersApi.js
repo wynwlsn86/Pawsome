@@ -39,7 +39,6 @@ export const addVolunteer = async (data) => {
     }
 }
 
-
 export const updateVolunteer = async (id, data) => {
     try{
         const resp = await api.put(`/:(${id})`, data);
