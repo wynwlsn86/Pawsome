@@ -3,9 +3,9 @@ const adopterRouter = express.Router();
 
 const { Adopter } = require('../models');
 
-// represents localhost:PORT/pets/
+// represents localhost:PORT/adopters/
 
-//get all those pets yeah
+//get all those adopters yeah
 adopterRouter.get('/', async (req, res) => {
   try {
     const allAdopters = await Adopter.findAll();
@@ -16,7 +16,7 @@ adopterRouter.get('/', async (req, res) => {
 });
 
 
-// post new pet
+// post new adopter
 adopterRouter.post('/', async (req, res) => {
   try {
     const postedAdopter = await Adopter.create(req.body);
@@ -26,7 +26,7 @@ adopterRouter.post('/', async (req, res) => {
   }
 });
 
-//find one pet
+//find one adopter
 adopterRouter.get('/:id', async (req, res) => {
   try {
     const leAdopter = await Adopter.findByPk(req.params.id);
@@ -36,7 +36,7 @@ adopterRouter.get('/:id', async (req, res) => {
   }
 });
 
-//update existing pets
+//update existing adopters
 adopterRouter.put('/:id', async (req, res) => {
     try {
       const id = req.params.id;
@@ -49,7 +49,7 @@ adopterRouter.put('/:id', async (req, res) => {
     }
   })
 
-// delete particular pet
+// delete particular adopter
 adopterRouter.delete('/:id', async (req, res) => {
   try {
     const deleteIt = await Adopter.findByPk(req.params.id);

@@ -20,11 +20,43 @@ export const getAllPets = async () => {
 
 export const addPet = async (data) => {
     try{
-        const resp = api.post('/', data);
+        const resp = await api.post('/', data);
         console.log(resp.data);
-        return resp.data.pets;
+        return resp
     }
-    catch (e) {
-        console.log(e.message);
+    catch(e){
+        console.log(e.message)
     }
 }
+
+export const putPet = async (id, data) => {
+    try{
+        const selectedPet = await Pet.findByPk(id);
+        console.log(selectedPet)
+        const resp = await api.put(`/:(${id})`, data);
+        return resp.json
+    }
+    catch(e){
+        console.log(e.message)
+    }
+}
+
+
+
+
+
+//***** */reference for put api - charles\* *********
+//
+// petRouter.put('/:id', async (req, res) => {
+//         try {
+//           const id = req.params.id;
+//           const selectedPet = await Pet.findByPk(id);
+//           console.log('got',req.body)
+//           if (selectedPet) await selectedPet.update(req.body);
+//           res.json('update success');
+//         } catch(e) {
+//           res.json(console.log(e + 'oh no so sad man'))
+//         }
+//       })
+
+

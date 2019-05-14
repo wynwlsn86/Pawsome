@@ -5,7 +5,7 @@ const { AuthUser } = require('../models');
 
 // represents localhost:PORT/pets/
 
-//get all those pets yeah
+//get all those users yeah
 userRouter.get('/', async (req, res) => {
   try {
     const allUsers = await AuthUser.findAll();
@@ -16,17 +16,17 @@ userRouter.get('/', async (req, res) => {
 });
 
 
-// post new pet
+// post new user
 userRouter.post('/', async (req, res) => {
   try {
-    const posteduser = await AuthUser.create(req.body);
+    const postedUser = await AuthUser.create(req.body);
     res.send(postedUser);
   } catch (e) {
     console.log(e.message);
   }
 });
 
-//find one pet
+//find one user
 userRouter.get('/:id', async (req, res) => {
   try {
     const leUser = await AuthUser.findByPk(req.params.id);
@@ -36,7 +36,7 @@ userRouter.get('/:id', async (req, res) => {
   }
 });
 
-//update existing pets
+//update existing users
 userRouter.put('/:id', async (req, res) => {
     try {
       const id = req.params.id;
@@ -49,7 +49,7 @@ userRouter.put('/:id', async (req, res) => {
     }
   })
 
-// delete particular pet
+// delete particular user
 userRouter.delete('/:id', async (req, res) => {
   try {
     const deleteIt = await AuthUser.findByPk(req.params.id);

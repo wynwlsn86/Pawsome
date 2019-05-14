@@ -147,15 +147,47 @@ const Visit = pawDb.define('visits', {
     }
 })
 
+const Volunteer = pawDb.define('volunteers', {
+    name: {
+        type:Sequelize.STRING,
+        allowNull: false
+       },
+    email: {
+        type: Sequelize.STRING,
+        allowNull: false
+       },
+    phone: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+       },
+    num_animals: {
+        type: Sequelize.STRING,
+        allowNull: true
+       },
+    preference: {
+        type:Sequelize.STRING,
+        allowNull: true
+    },
+    additional_info: {
+        type: Sequelize.STRING,
+        allowNull: true
+    }
+   })
 
-Pet.belongsToMany(Visit, {
-    through: 'pets_to_visits_xref',
+
+// Pet.belongsToMany(Visit, {
+//     through: 'pets_to_visits_xref',
+//     foreignKey: 'animal_id'});
+// Visit.belongsTo(Pet);
+
+Pet.belongsToMany(Volunteer, {
+    through: 'pets_to_vol_xref',
     foreignKey: 'animal_id'});
-Visit.belongsTo(Pet);
+Volunteer.belongsTo(Pet);
 
 
 Adopter.belongsToMany(Pet, {
-    through: 'adopters_to_pets',
+    through: 'adopters_to_pets_xref',
     foreignKey: 'adopter_id'})
 Pet.belongsTo(Adopter);
 
@@ -168,5 +200,6 @@ Pet.belongsTo(Adopter);
     AuthUser,
     Pet,
     Visit,
-    Adopter
+    Adopter,
+    Volunteer
   }

@@ -18,6 +18,11 @@ const seedDb = async () => {
       email: "charleskorpics@gmail.com",
       password: 'ohwowitsapasswordnobodywilleverguessit',
     });
+    const fakeVolunteerInstance = await Visit.create({
+      name: "lil bill",
+      email: "bill@billybill.com",
+      phone: '911-311-ghostbusters'
+    });
     const fakeVisitInstance = await Visit.create({
       visit_date: "01/25/1994",
       pass: true
