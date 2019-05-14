@@ -24,17 +24,9 @@ class NewVolunteerForm extends Component {
   }
 
   async submitForm() {
-<<<<<<< HEAD
-    const {addVolunteer} = this.state
-    try {
-      await addVolunteer()
-      this.clearForm()
-
-=======
     const data = this.state
     try {
-      await addVolunteer(data) 
->>>>>>> decbb30db990c03995af94746c99d1495ece0a4e
+      await addVolunteer(data)
       alert('Application was successfully created')
     } catch(error) {
       console.log(error)
