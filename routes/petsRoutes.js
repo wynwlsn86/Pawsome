@@ -41,6 +41,7 @@ petRouter.put('/:id', async (req, res) => {
     try {
       const id = req.params.id;
       const selectedPet = await Pet.findByPk(id);
+      console.log('got',req.body)
       if (selectedPet) await selectedPet.update(req.body);
       res.json('update success');
     } catch(e) {
