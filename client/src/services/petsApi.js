@@ -17,7 +17,7 @@ export const getAllPets = async () => {
         console.log(e.message);
     }
 }
-
+//
 export const addPet = async (data) => {
     try{
         const resp = await api.post('/', data);

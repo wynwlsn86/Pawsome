@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-
+const bcrypt = require('bcrypt')
 
 const pawDb = new Sequelize({
   database: 'pawDb',
@@ -187,7 +187,10 @@ Adopter.belongsToMany(Pet, {
 Pet.belongsTo(Adopter);
 
 
-
+AuthUser.beforeCreate(async (user,options) => {
+    const hashedPassword = await bcrypt.hash(user.password, 12);
+    user.password = hashedPassword;
+  })
 
 
   module.exports = {
