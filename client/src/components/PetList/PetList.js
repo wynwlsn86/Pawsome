@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
+import Morty from '../../assets/morty.jpeg'
 
 class PetList extends Component {
-    createList = () => {
-        this.props.allPets.map(pet => {
-            return console.log('petsssss');
-        })
-}
-    render() {
 
+    render() {
+       const petList = this.props.allPets.map((pet) => {
+           return (
+                <div>
+                    <h1>{pet.name}</h1>
+                    <img src={Morty} alt='test' />
+                </div>
+            )
+        });
 
         return (
             <div>
-                {/* {this.createList} */}
+                {petList}
             </div>
         );
     }

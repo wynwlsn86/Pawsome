@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => (
-  <div class="Footer">
+  <div className="Footer">
     <p>
       "random feel-good quote about adopting pets"
     </p>
