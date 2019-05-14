@@ -41,11 +41,25 @@ petRouter.put('/:id', async (req, res) => {
     try {
       const id = req.params.id;
       const selectedPet = await Pet.findByPk(id);
-      console.log('got',req.body)
       if (selectedPet) await selectedPet.update(req.body);
-      res.json('update success');
+      res.json('update success' + selectedBody);
     } catch(e) {
       res.json(console.log(e + 'oh no so sad man'))
+    }
+  })
+
+petRouter.put('/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const grabbedPet = await Pet.findByPk(id);
+    if (grabbedPet) await grabbedPet.update(req.body);
+    res.json({
+      grabbedPet
+    });
+  } catch(e) {
+    res.status(304).json({
+      message: e.message
+    });
     }
   })
 

@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const Base_URL = 'http://localhost:5000/pets'
+const Base_URL = 'http://localhost:5000/users'
 
 const api = axios.create({
     baseURL: Base_URL 
 })
 
 
-export const getAllPets = async () => {
+export const getAllUsers = async () => {
     try{
         const resp = await api.get('/');
         console.log(resp.data);
@@ -18,7 +18,7 @@ export const getAllPets = async () => {
     }
 }
 
-export const addPet = async (data) => {
+export const addUsers = async (data) => {
     try{
         const resp = await api.post('/', data);
         console.log(resp.data);
@@ -29,7 +29,7 @@ export const addPet = async (data) => {
     }
 }
 
-export const putPet = async (id, data) => {
+export const putUsers = async (id, data) => {
     try{
         const resp = await api.put(`/:(${id})`, data);
         return resp.json
