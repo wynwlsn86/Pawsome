@@ -31,8 +31,6 @@ export const addPet = async (data) => {
 
 export const putPet = async (id, data) => {
     try{
-        const selectedPet = await Pet.findByPk(id);
-        console.log(selectedPet)
         const resp = await api.put(`/:(${id})`, data);
         return resp.json
     }
@@ -40,23 +38,3 @@ export const putPet = async (id, data) => {
         console.log(e.message)
     }
 }
-
-
-
-
-
-//***** */reference for put api - charles\* *********
-//
-// petRouter.put('/:id', async (req, res) => {
-//         try {
-//           const id = req.params.id;
-//           const selectedPet = await Pet.findByPk(id);
-//           console.log('got',req.body)
-//           if (selectedPet) await selectedPet.update(req.body);
-//           res.json('update success');
-//         } catch(e) {
-//           res.json(console.log(e + 'oh no so sad man'))
-//         }
-//       })
-
-

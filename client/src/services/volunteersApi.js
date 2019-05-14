@@ -41,9 +41,7 @@ export const addVolunteer = async (data) => {
 
 export const updateVolunteer = async (id, data) => {
     try{
-        const selecteduser = await Volunteer.findByPk({id});
-        console.log(selectedPet)
-        const resp = await api.put('/:(id)', data);
+        const resp = await api.put(`/:(${id})`, data);
         return resp.json
     }
     catch(e){
