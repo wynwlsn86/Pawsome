@@ -7,7 +7,14 @@ const pawDb = new Sequelize({
 })
 
 const AuthUser = pawDb.define('authuser', {
-    name: Sequelize.STRING,
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    username:{
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     email: {
       type: Sequelize.STRING,
       allowNull: false,
@@ -61,24 +68,24 @@ const Pet = pawDb.define('pets', {
     }
   })
 
-const Visit = pawDb.define('visits', {
-    adoption_date: {
-        type:Sequelize.STRING,
-        allowNull: true
-       },
-    visit_date: {
-        type: Sequelize.STRING,
-        allowNull: false
-       },
-    pass: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false
-       },
-    comments: {
-        type: Sequelize.STRING,
-        allowNull: true
-       } 
-   })
+// const Visit = pawDb.define('visits', {
+//     adoption_date: {
+//         type:Sequelize.STRING,
+//         allowNull: true
+//        },
+//     visit_date: {
+//         type: Sequelize.STRING,
+//         allowNull: false
+//        },
+//     pass: {
+//         type: Sequelize.BOOLEAN,
+//         allowNull: false
+//        },
+//     comments: {
+//         type: Sequelize.STRING,
+//         allowNull: true
+//        } 
+//    })
 
    const Adopter = pawDb.define('adopters', {
     first_name: {
@@ -157,7 +164,7 @@ const Volunteer = pawDb.define('volunteers', {
         allowNull: false
        },
     phone: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.STRING,
         allowNull: false
        },
     num_animals: {
@@ -199,7 +206,6 @@ Pet.belongsTo(Adopter);
     pawDb,
     AuthUser,
     Pet,
-    Visit,
     Adopter,
     Volunteer
   }

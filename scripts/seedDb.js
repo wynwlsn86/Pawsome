@@ -1,4 +1,4 @@
-const { AuthUser, Pet, Visit, Adopter } = require('../models.js')
+const { AuthUser, Pet, Adopter, Volunteer } = require('../models.js')
 const pets = require('../data')
 
 //const bcrypt = require('bcrypt') tuesday
@@ -7,7 +7,7 @@ const pets = require('../data')
 
 
 // WAYNE or TARA
-// once decided upon - delete my const = fake.. variables. these are to ensure seed.js populates the tables with expected values.
+// once decided upon(and if i haven't done this) - delete my const = fake.. variables. these are to ensure seed.js populates the tables with expected values.
 
 const seedDb = async () => {
   try {
@@ -15,17 +15,14 @@ const seedDb = async () => {
     const creator = await Pet.bulkCreate(pets)
     const fakeUserCharles = await AuthUser.create({
       name: "Mister Charles",
+      username:'wayneuser',
       email: "charleskorpics@gmail.com",
       password: 'ohwowitsapasswordnobodywilleverguessit',
     });
-    const fakeVolunteerInstance = await Visit.create({
+    const fakeVolunteerInstance = await Volunteer.create({
       name: "lil bill",
       email: "bill@billybill.com",
       phone: '911-311-ghostbusters'
-    });
-    const fakeVisitInstance = await Visit.create({
-      visit_date: "01/25/1994",
-      pass: true
     });
     const fakeAdopterInstance = await Adopter.create({
       first_name: 'hey',

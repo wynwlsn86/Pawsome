@@ -1,24 +1,40 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import {addVolunteer} from '../../services/volunteersApi'
 
+=======
+import { addVolunteer } from '../../services/volunteersApi'; //need this file to be created, and for the file to contain a create application function
+>>>>>>> decbb30db990c03995af94746c99d1495ece0a4e
 
 class NewVolunteerForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      name: "",
+      phone: '',
+      email: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: null,
+      formtoggle: false
     }
-
     this.handleTextInput = this.handleTextInput.bind(this)
     this.handleSubmitForm = this.handleSubmitForm.bind(this)
   }
 
   async submitForm() {
+<<<<<<< HEAD
     const {addVolunteer} = this.state
     try {
       await addVolunteer()
       this.clearForm()
 
+=======
+    const data = this.state
+    try {
+      await addVolunteer(data) 
+>>>>>>> decbb30db990c03995af94746c99d1495ece0a4e
       alert('Application was successfully created')
     } catch(error) {
       console.log(error)
@@ -29,6 +45,12 @@ class NewVolunteerForm extends Component {
   clearForm() {
     this.setState({
       name: "",
+      phone: '',
+      email: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: null
     })
   }
 
@@ -37,17 +59,17 @@ class NewVolunteerForm extends Component {
     console.log(fieldName);
     //write in the field to view the changes in console, and display the name of the input
     const value = event.target.value
-    // console.log('data:', `${fieldName}, ${value}`)
+    console.log( `${fieldName}, ${value}`)
 
     this.setState(state => {
       // console.log(event)
+
       return { [fieldName]: value }
     })
   }
 
   handleSubmitForm(event) {
     event.preventDefault()
-
     this.submitForm()
   }
 
@@ -58,7 +80,7 @@ class NewVolunteerForm extends Component {
 
         <form className="Volunteer-form" onSubmit={this.handleSubmitForm}>
           <div>
-            <label>Applicant Name</label>
+            <label>Applicant Name:</label>
             <input
               type="text"
               name="name"
@@ -68,72 +90,73 @@ class NewVolunteerForm extends Component {
           </div>
 
           <div>
-            <label>Phone</label>
+            <label>Phone:</label>
             <input
               type="text"
               name="phone"
               onChange={this.handleTextInput}
-              value={this.state.name}
+              value={this.state.phone}
             />
           </div>
 
           <div>
-            <label>Email</label>
+            <label>Email:</label>
             <input
               type="text"
               name="email"
               onChange={this.handleTextInput}
-              value={this.state.name}
+              value={this.state.email}
             />
           </div>
 
           <div>
-            <label>Address 1</label>
+            <label>Address:</label>
             <input
               type="text"
-              name="Address 1"
+              name="address"
               onChange={this.handleTextInput}
-              value={this.state.trainType}
+              value={this.state.address}
+            />
+          </div>
+          //
+
+          <div>
+            <label>City:</label>
+            <input
+              type="text"
+              name="city"
+              onChange={this.handleTextInput}
+              value={this.state.city}
             />
           </div>
 
           <div>
-            <label>Address 2</label>
+            <label>State:</label>
             <input
               type="text"
-              name="Address 2"
+              name="state"
               onChange={this.handleTextInput}
-              value={this.state.trainType}
+              value={this.state.state}
             />
           </div>
 
           <div>
-            <label>City</label>
+            <label>Zip Code:</label>
             <input
               type="text"
-              name="City"
+              name="zip Code"
               onChange={this.handleTextInput}
-              value={this.state.trainType}
+              value={this.state.zip}
             />
           </div>
 
           <div>
-            <label>State</label>
+            <label>Number of Pets:</label>
             <input
               type="text"
-              name="State"
+              name="num_of_pets"
               onChange={this.handleTextInput}
-              value={this.state.trainType}
-            />
-          </div>
-
-          <div>
-            <label>Zip Code</label>
-            <input
-              type="text"
-              name="Zip Code"
-              onChange={this.handleTextInput}
-              value={this.state.trainType}
+              value={this.state.num_of_pets}
             />
           </div>
 
