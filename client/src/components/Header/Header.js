@@ -1,13 +1,17 @@
 import React from 'react';
+import logo from '../../assets/logoSmall.jpeg'
 import { Link } from 'react-router-dom';
 
 const Header = () => (
   <div>
     <ul className="Nav-ul">
+      <Link to='/'>
+        <img src={logo} alt='' />
+      </Link>
       <Link to='/find-a-pet'>
         <li className="Nav-li">Find a Pet</li>
       </Link>
-      <Link to='/volunteer'>
+      <Link to='/volunteers'>
         <li className="Nav-li">Volunteer</li>
       </Link>
       <Link to='/add-pet'>

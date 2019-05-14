@@ -9,9 +9,6 @@ import Main from './components/Main/Main';
 function App() {
   return (
     <div className="App">
-    <Link to='/'>
-      <h1>PAWSOME</h1>
-    </Link>
     <Header />
     <Main/>
     <Footer/>

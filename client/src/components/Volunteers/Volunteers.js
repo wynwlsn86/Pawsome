@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import { addVolunteer } from '../services/volunteersApi'; //need this file to be created, and for the file to contain a create application function
-=======
-import  {addVolunteer}  from '../../services/volunteersApi'; //need this file to be created, and for the file to contain a create application function
->>>>>>> c7f01c719a9a074efcb94851a873de290ba72fde
+import { addVolunteer } from '../../services/volunteersApi'; //need this file to be created, and for the file to contain a create application function
 
 class NewVolunteerForm extends Component {
   constructor(props) {
@@ -11,7 +7,6 @@ class NewVolunteerForm extends Component {
     this.state = {
       name: '',
     }
-
     this.handleTextInput = this.handleTextInput.bind(this)
     this.handleSubmitForm = this.handleSubmitForm.bind(this)
   }
@@ -19,10 +14,6 @@ class NewVolunteerForm extends Component {
   async submitForm() {
     const {} = this.state
     try {
-<<<<<<< HEAD
-      //not created ******************
-=======
->>>>>>> c7f01c719a9a074efcb94851a873de290ba72fde
       await addVolunteer() 
       this.clearForm()
 

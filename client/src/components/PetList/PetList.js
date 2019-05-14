@@ -5,6 +5,7 @@ import flopsy_peter from '../../assets/flopsy_peter.jpeg'
 import Putzie from '../../assets/putzie.jpeg'
 import Rizzo from '../../assets/rizzo.jpeg'
 import Sammi from '../../assets/sami.jpeg'
+import SelectedPet from '../selectedPet/SelectedPet';
 class PetList extends Component {
     constructor(){
         super();
@@ -29,6 +30,7 @@ class PetList extends Component {
 
         return (
             <div>
+                <SelectedPet />
                 {petList}
             </div>
         );

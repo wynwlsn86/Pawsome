@@ -5,7 +5,6 @@ import React from 'react';
 function Home() {
   return (
     <div className="App">
-    <h1>PAWSOME</h1>
     <div>
       <div class="Main">
          <img src="https://via.placeholder.com/250" alt="pet photos" ALIGN="left"/>
