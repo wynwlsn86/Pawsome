@@ -40,4 +40,3 @@ export const putPet = async (id, data) => {
         console.log(e.message)
     }
 }
-

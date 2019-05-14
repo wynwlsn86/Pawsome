@@ -7,6 +7,8 @@ import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
 import LogIn from '../LogIn/Login';
 
+
+
 class Main extends Component {
   constructor () {
     super();
