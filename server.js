@@ -13,6 +13,7 @@ const app = express()
 app.use(logger('dev'))
 app.use(cors())
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.use('/pets', petRouter)
 
