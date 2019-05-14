@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Morty from '../../assets/morty.jpeg'
 
 class PetList extends Component {
 
@@ -7,14 +8,13 @@ class PetList extends Component {
            return (
                 <div>
                     <h1>{pet.name}</h1>
-                    <img src={pet.image} alt='' />
+                    <img src={Morty} alt='test' />
                 </div>
             )
         });
 
         return (
             <div>
-                PetList
                 {petList}
             </div>
         );
