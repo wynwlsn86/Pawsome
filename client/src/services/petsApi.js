@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import {Pet} from ''
 
 const Base_URL = 'http://localhost:5000/pets'
 
@@ -23,13 +22,12 @@ export const addPet = async (data) => {
     try{
         const resp = await api.post('/', data);
         console.log(resp.data);
-        return resp      
+        return resp
     }
     catch(e){
         console.log(e.message)
     }
 }
-
 
 export const putPet = async (id, data) => {
     try{
