@@ -1,4 +1,4 @@
-const { AuthUser, Pet, Visit, Adopter } = require('../models.js')
+const { AuthUser, Pet, Adopter, Volunteer } = require('../models.js')
 const pets = require('../data')
 
 //const bcrypt = require('bcrypt') tuesday
@@ -18,14 +18,10 @@ const seedDb = async () => {
       email: "charleskorpics@gmail.com",
       password: 'ohwowitsapasswordnobodywilleverguessit',
     });
-    const fakeVolunteerInstance = await Visit.create({
+    const fakeVolunteerInstance = await Volunteer.create({
       name: "lil bill",
       email: "bill@billybill.com",
       phone: '911-311-ghostbusters'
-    });
-    const fakeVisitInstance = await Visit.create({
-      visit_date: "01/25/1994",
-      pass: true
     });
     const fakeAdopterInstance = await Adopter.create({
       first_name: 'hey',
