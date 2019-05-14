@@ -40,7 +40,7 @@ volRouter.get('/:id', async (req, res) => {
 volRouter.put('/:id', async (req, res) => {
   try {
     const id = req.params.id;
-    const grabbedVol = await AuthUser.findByPk(id);
+    const grabbedVol = await Volunteer.findByPk(id);
     if (grabbedVol) await grabbedVol.update(req.body);
     res.json({
       grabbedVol

@@ -157,7 +157,7 @@ const Volunteer = pawDb.define('volunteers', {
         allowNull: false
        },
     phone: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.STRING,
         allowNull: false
        },
     num_animals: {
