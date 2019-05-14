@@ -51,7 +51,7 @@ userRouter.put('/:id', async (req, res) => {
     });
     }
   })
-  })
+  
 
 // delete particular user
 userRouter.delete('/:id', async (req, res) => {
