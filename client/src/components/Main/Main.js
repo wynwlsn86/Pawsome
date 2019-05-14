@@ -5,7 +5,9 @@ import Volunteers from '../Volunteers/Volunteers'
 import { Route} from 'react-router-dom'
 import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
-import LogIn from '../LogIn/Login'; //   ../uppercase/lowercase
+import LogIn from '../LogIn/Login';
+
+
 
 class Main extends Component {
   constructor () {
