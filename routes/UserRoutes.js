@@ -38,16 +38,20 @@ userRouter.get('/:id', async (req, res) => {
 
 //update existing users
 userRouter.put('/:id', async (req, res) => {
-    try {
-      const id = req.params.id;
-      const selectedUser = await user.findByPk(id);
-      console.log('got',req.body)
-      if (selectedUser) await selectedUser.update(req.body);
-      res.json('update success');
-    } catch(e) {
-      res.json(console.log(e + 'oh no so sad man'))
+  try {
+    const id = req.params.id;
+    const grabbedUser = await AuthUser.findByPk(id);
+    if (grabbedUser) await grabbedUser.update(req.body);
+    res.json({
+      grabbedUser
+    });
+  } catch(e) {
+    res.status(304).json({
+      message: e.message
+    });
     }
   })
+  
 
 // delete particular user
 userRouter.delete('/:id', async (req, res) => {
