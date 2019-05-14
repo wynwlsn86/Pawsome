@@ -7,7 +7,14 @@ const pawDb = new Sequelize({
 })
 
 const AuthUser = pawDb.define('authuser', {
-    name: Sequelize.STRING,
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    username:{
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     email: {
       type: Sequelize.STRING,
       allowNull: false,

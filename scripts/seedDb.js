@@ -15,6 +15,7 @@ const seedDb = async () => {
     const creator = await Pet.bulkCreate(pets)
     const fakeUserCharles = await AuthUser.create({
       name: "Mister Charles",
+      username:'wayneuser',
       email: "charleskorpics@gmail.com",
       password: 'ohwowitsapasswordnobodywilleverguessit',
     });
