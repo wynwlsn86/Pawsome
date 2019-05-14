@@ -17,6 +17,12 @@ class AddPet extends Component {
             createdPet: false
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this); // bind it, don't buind it.
+    }
+
+    handleSubmit = (e) => {
+
+
         // this.handleSubmit = this.handleSubmit.buind(this);
     }
 
@@ -51,72 +57,72 @@ class AddPet extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>Name:</label>
-                    <input 
-                        type='input' 
+                    <input
+                        type='input'
                         placeholder='Pet Name'
                         id='name'
                         name='name'
                         onChange={this.handleChange}
                     />
                     <label>Age:</label>
-                    <input 
-                        type='input' 
+                    <input
+                        type='input'
                         placeholder='Age'
                         id='age'
                         name='age'
                         onChange={this.handleChange}
                     />
                     <label>Species:</label>
-                    <input 
-                        type='input' 
+                    <input
+                        type='input'
                         placeholder='Species'
                         id='species'
                         name='species'
                         onChange={this.handleChange}
                     />
                     <label>Color:</label>
-                    <input 
-                        type='input' 
+                    <input
+                        type='input'
                         placeholder='Color'
                         id='color'
-                        name='color' 
+                        name='color'
                         onChange={this.handleChange}
                     />
                     <label>Gender:</label>
-                    <input 
-                        type='input' 
+                    <input
+                        type='input'
                         placeholder='Gender'
                         id='gender'
                         name='gender'
                         onChange={this.handleChange}
                     />
                     <label>Breed:</label>
-                    <input 
-                        type='input' 
+                    <input
+                        type='input'
                         placeholder='Breed'
                         id='breed'
                         name='breed'
                         onChange={this.handleChange}
                     />
                     <label>Medical:</label>
-                    <input 
-                        type='input' 
+                    <input
+                        type='input'
                         placeholder='Fixed'
                         id='medical'
                         name='medical'
                         onChange={this.handleChange}
                     />
                     <label>Bio:</label>
-                    <input 
-                        type='input' 
+                    <input
+                        type='input'
                         placeholder='Biography'
                         id='biography'
                         name='biography'
                         onChange={this.handleChange}
                     />
                     <label>Image:</label>
-                    <input 
-                        type='input' 
+                    <input
+                        type='input'
                         placeholder='Image File'
                         id='image'
                         name='image'
