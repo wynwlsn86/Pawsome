@@ -14,10 +14,8 @@ const seedDb = async () => {
     // declare a const that uses your table object from model.js to .bulkCreate()
     const creator = await Pet.bulkCreate(pets)
     const fakeUserCharles = await AuthUser.create({
-      name: "Mister Charles",
       username:'wayneuser',
-      email: "charleskorpics@gmail.com",
-      password: 'ohwowitsapasswordnobodywilleverguessit',
+      password: 'password',
     });
     const fakeVolunteerInstance = await Volunteer.create({
       name: "lil bill",

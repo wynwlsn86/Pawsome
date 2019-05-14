@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const logger = require('morgan')
 const { petRouter } = require('./routes/petsRoutes');
 const authRouter = require('./routes/authRoutes');
+const {volRouter} = require('./routes/volunteersRoutes');
 const loggedInRoutes = require('./routes/loggedInRoutes');
 const passport = require('passport');
 const { authorized } = require('./auth/auth');
@@ -27,7 +28,6 @@ app.use('/auth', authRouter);
 app.use('/app', authorized, loggedInRoutes);
 app.use('/volunteers', volRouter)
 app.use('/users', userRouter)
-
 
 //this is a prepending route. aka:  /app/protect and /auth/login etc
 //app.use('/auth', (auth routes here preferably held in seperate file structure *router*)

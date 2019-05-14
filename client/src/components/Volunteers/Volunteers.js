@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
+import {addVolunteer} from '../../services/volunteersApi'
+
+=======
 import { addVolunteer } from '../../services/volunteersApi'; //need this file to be created, and for the file to contain a create application function
+>>>>>>> decbb30db990c03995af94746c99d1495ece0a4e
 
 class NewVolunteerForm extends Component {
   constructor(props) {
@@ -21,7 +26,7 @@ class NewVolunteerForm extends Component {
   async submitForm() {
     const data = this.state
     try {
-      await addVolunteer(data) 
+      await addVolunteer(data)
       alert('Application was successfully created')
     } catch(error) {
       console.log(error)
@@ -65,7 +70,7 @@ class NewVolunteerForm extends Component {
       <div>
         <h2>New Volunteer Form</h2>
 
-        <form className="volunteer-form" onSubmit={this.handleSubmitForm}>
+        <form className="Volunteer-form" onSubmit={this.handleSubmitForm}>
           <div>
             <label>Applicant Name:</label>
             <input
@@ -105,6 +110,7 @@ class NewVolunteerForm extends Component {
               value={this.state.address}
             />
           </div>
+          //
 
           <div>
             <label>City:</label>
