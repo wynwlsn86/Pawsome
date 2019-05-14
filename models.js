@@ -1,5 +1,4 @@
 const Sequelize = require('sequelize');
-//const bcrypt = require('bcrypt'); tuesday
 
 
 const pawDb = new Sequelize({
@@ -23,7 +22,7 @@ const AuthUser = pawDb.define('authuser', {
     }
   })
 
-  const Pet = pawDb.define('pets', {
+const Pet = pawDb.define('pets', {
     name: {
       type: Sequelize.STRING,
       allowNull: false
@@ -44,16 +43,12 @@ const AuthUser = pawDb.define('authuser', {
         type: Sequelize.STRING,
         allowNull: true
     },
-    birthday: {
-        type: Sequelize.DATE,
-        allowNull: true
-    },
     age: {
         type: Sequelize.STRING,
         allowNull: true
     },
-    fixed: {
-        type: Sequelize.BOOLEAN,
+    medical: {
+        type: Sequelize.STRING,
         allowNull: true
     },
     bio: {
@@ -66,22 +61,22 @@ const AuthUser = pawDb.define('authuser', {
     }
   })
 
-   const Visit = pawDb.define('visits', {
-       adoption_date: {
-           type:Sequelize.DATE,
-           allowNull: true
+const Visit = pawDb.define('visits', {
+    adoption_date: {
+        type:Sequelize.STRING,
+        allowNull: true
        },
-       visit_date: {
-           type: Sequelize.DATE,
-           allowNull: false
+    visit_date: {
+        type: Sequelize.STRING,
+        allowNull: false
        },
-       pass: {
-           type: Sequelize.BOOLEAN,
-           allowNull: false
+    pass: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
        },
-       comments: {
-           type: Sequelize.STRING,
-           allowNull: true
+    comments: {
+        type: Sequelize.STRING,
+        allowNull: true
        } 
    })
 
@@ -90,7 +85,35 @@ const AuthUser = pawDb.define('authuser', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    vlast_name: {
+    last_name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    dob:{
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    license: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
+    rent_or_own:{
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    other_pets:{
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    children:{
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    allergies:{
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    vet:{
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -118,19 +141,26 @@ const AuthUser = pawDb.define('authuser', {
         type: Sequelize.INTEGER,
         allownull: false
     },
-    family_size_int: {
-        type: Sequelize.INTEGER,
-        allownull: true
-    },
     house_size_sqft: {
-        type: Sequelize.INTEGER,
-        allownull: true
-    },
-    animal_id:{
-        type: Sequelize.INTEGER,
-        allowNull: true
+        type: Sequelize.STRING,
+        allownull: false
     }
 })
+
+
+Pet.belongsToMany(Visit, {
+    through: 'pets_to_visits_xref',
+    foreignKey: 'animal_id'});
+Visit.belongsTo(Pet);
+
+
+Adopter.belongsToMany(Pet, {
+    through: 'adopters_to_pets',
+    foreignKey: 'adopter_id'})
+Pet.belongsTo(Adopter);
+
+
+
 
 
   module.exports = {

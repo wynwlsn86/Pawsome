@@ -79,3 +79,21 @@ Component Hierarchy Wireframes should be broken into components which then shoul
 ***Link to Wireframes***
 
 https://imgur.com/a/v4BSEI5
+
+***example of json object from pets table***
+
+````[
+    {
+        "id": 1,
+        "name": "Flopsy(f) and Peter(m)",
+        "species": "cat",
+        "color": "brown",
+        "gender": "m/f",
+        "breed": "tabby",
+        "age": "3 years",
+        "medical": null,
+        "bio": "Bonded brother and sister (need to stay together). Born in foster care on Easter Sunday but unfortunately looked over as kittens and have spent their entire lives with foster parents. Peter can be shy but comes out of his shell with time",
+        "image": null,
+        "createdAt": "2019-05-13T18:18:50.244Z",
+        "updatedAt": "2019-05-13T18:18:50.244Z"
+    },

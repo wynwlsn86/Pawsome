@@ -1,5 +1,10 @@
 import React from 'react';
+import AddPet from '../AddPet/AddPet';
+import Home from '../Home/Home';
+import PetList from '../PetList/PetList'
+import { Route} from 'react-router-dom'
 
+<<<<<<< HEAD
 const Main = () => (
 <div>
   <div class="Main">
@@ -15,6 +20,20 @@ const Main = () => (
         </div>
    </div>
 </div>
+=======
+const Main = ({}) => (
+  <div>
+    <Route 
+      exact path='/' 
+      render={() => <Home />} />
+    <Route 
+      path='/pet-list'
+      render={() => <PetList />} />
+    <Route
+      path='/add-pet'
+      render={() => <AddPet />} />
+  </div>
+>>>>>>> f57a5e98515692811fda24ea9e98d933a62c5cdc
 );
 
 export default Main;
