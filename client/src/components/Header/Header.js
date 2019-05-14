@@ -1,19 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <div>
-    <ul class="Nav-ul">
+    <ul className="Nav-ul">
       <Link to='/find-a-pet'>
-        <li class="Nav-li">Find a Pet</li>
+        <li className="Nav-li">Find a Pet</li>
       </Link>
       <Link to='/volunteer'>
-        <li class="Nav-li">Volunteer</li>
+        <li className="Nav-li">Volunteer</li>
+      </Link>
+      <Link to='/add-pet'>
+        <li className="Nav-li">Add Pet</li>
       </Link>
       <Link to='/contact-us'>
-        <li class="Nav-li">Contact Us</li>
+        <li className="Nav-li">Contact Us</li>
       </Link>
       <Link to='/login'>
-        <li class="Nav-li">Login</li>
+        <li className="Nav-li">Login</li>
 //
       </Link>
     </ul>
