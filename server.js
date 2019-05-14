@@ -3,7 +3,10 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
 const { petRouter } = require('./routes/petsRoutes');
-//const passport = require('passport') tuesday
+const authRouter = require('./routes/authRoutes');
+const loggedInRoutes = require('./routes/loggedInRoutes');
+const passport = require('passport');
+const { authorized } = require('./auth/auth');
 
 
 const PORT = process.env.PORT || 5000
@@ -14,8 +17,11 @@ app.use(logger('dev'))
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(passport.initialize());
 
 app.use('/pets', petRouter)
+app.use('/auth', authRouter);
+app.use('/app', authorized, loggedInRoutes);
 
 //this is a prepending route. aka:  /app/protect and /auth/login etc
 //app.use('/auth', (auth routes here preferably held in seperate file structure *router*)
