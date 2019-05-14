@@ -26,20 +26,6 @@ class AddPet extends Component {
         // this.handleSubmit = this.handleSubmit.buind(this);
     }
 
-    getPets = async () => {
-        const postPets = await axios.get('http://localhost:5000/posts');
-        const posts = postPets.data;
-        this.setState({posts});
-      }
-
-
-    postAnimal = async e => {
-        e.preventDefault();
-        let { form } = this.state;
-        await axios.post('http://localhost:5000/pets', form);
-        await this.getPets();
-      }
-
     handleSubmit = async(e) => {
         e.preventDefault();
         let newPet = {
