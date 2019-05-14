@@ -23,7 +23,6 @@ export const addPet = async (data) => {
         const resp = api.post('/', data);
         console.log(resp.data);
         return resp.data.pets;
-        
     }
     catch (e) {
         console.log(e.message);
