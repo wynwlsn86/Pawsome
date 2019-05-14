@@ -38,14 +38,17 @@ adopterRouter.get('/:id', async (req, res) => {
 
 //update existing adopters
 adopterRouter.put('/:id', async (req, res) => {
-    try {
-      const id = req.params.id;
-      const selectedAdopter = await Adopter.findByPk(id);
-      console.log('got',req.body)
-      if (selectedAdopter) await selectedAdopter.update(req.body);
-      res.json('update success');
-    } catch(e) {
-      res.json(console.log(e + 'oh no so sad man'))
+  try {
+    const id = req.params.id;
+    const grabbedAdopt = await Adopter.findByPk(id);
+    if (grabbedAdopt) await grabbedAdopt.update(req.body);
+    res.json({
+      grabbedAdopt
+    });
+  } catch(e) {
+    res.status(304).json({
+      message: e.message
+    });
     }
   })
 

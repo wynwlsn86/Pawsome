@@ -38,17 +38,19 @@ volRouter.get('/:id', async (req, res) => {
 
 //update existing vol
 volRouter.put('/:id', async (req, res) => {
-    try {
-      const id = req.params.id;
-      const selectedVol = await user.findByPk(id);
-      console.log('got',req.body)
-      if (selectedVol) await selectedVol.update(req.body);
-      res.json('update success');
-    } catch(e) {
-      res.json(console.log(e + 'oh no so sad man'))
+  try {
+    const id = req.params.id;
+    const grabbedVol = await AuthUser.findByPk(id);
+    if (grabbedVol) await grabbedVol.update(req.body);
+    res.json({
+      grabbedVol
+    });
+  } catch(e) {
+    res.status(304).json({
+      message: e.message
+    });
     }
   })
-
 // delete particular vol
 volRouter.delete('/:id', async (req, res) => {
   try {
