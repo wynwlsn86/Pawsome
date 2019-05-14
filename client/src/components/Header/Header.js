@@ -18,7 +18,6 @@ const Header = () => (
       </Link>
       <Link to='/login'>
         <li className="Nav-li">Login</li>
-//
       </Link>
     </ul>
   </div>

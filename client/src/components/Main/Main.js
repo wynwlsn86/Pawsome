@@ -1,10 +1,26 @@
 import AddPet from '../AddPet/AddPet';
 import Home from '../Home/Home';
 import PetList from '../PetList/PetList'
+import Volunteers from '../Volunteers/Volunteers'
 import { Route} from 'react-router-dom'
 import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
 
+
+const Main = ({}) => (
+  <div>
+    <Route
+      exact path='/'
+      render={() => <Home />} />
+    <Route
+      path='/pet-list'
+      render={() => <PetList />} />
+    <Route
+      path='/add-pet'
+      render={() => <AddPet />} />
+  </div>
+);
+=======
 class Main extends Component {
   constructor () {
     super();
@@ -33,6 +49,9 @@ class Main extends Component {
           render={() => <PetList 
           allPets={this.state.allPets}
         />} />
+         <Route
+           path='/volunteers'
+           render={() => <Volunteers />} />
         <Route
           path='/add-pet'
           render={() => <AddPet />} />
