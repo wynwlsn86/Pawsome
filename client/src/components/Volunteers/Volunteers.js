@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import {addVolunteer} from '../../services/volunteersApi'
 
-=======
-import { addVolunteer } from '../../services/volunteersApi'; //need this file to be created, and for the file to contain a create application function
->>>>>>> decbb30db990c03995af94746c99d1495ece0a4e
 
 class NewVolunteerForm extends Component {
   constructor(props) {

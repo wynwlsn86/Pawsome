@@ -38,8 +38,7 @@ export const addVolunteer = async (data) => {
         console.log(e.message)
     }
 }
-<<<<<<< HEAD
-=======
+
 
 export const updateVolunteer = async (id, data) => {
     try{
@@ -50,4 +49,4 @@ export const updateVolunteer = async (id, data) => {
         console.log(e.message)
     }
 }
->>>>>>> decbb30db990c03995af94746c99d1495ece0a4e
+
