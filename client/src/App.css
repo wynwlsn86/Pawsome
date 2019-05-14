@@ -7,6 +7,23 @@
   height: 40vmin;
   pointer-events: none;
 }
+.Nav-ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  border: solid black;
+  padding: 20px 0 20px 0;
+}
+
+.Footer {
+  border: solid black;
+}
+
+.Footer ul, p {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
 
 .App-header {
   background-color: #282c34;
