@@ -6,21 +6,19 @@ import { Route} from 'react-router-dom'
 import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
 
-
-const Main = ({}) => (
-  <div>
-    <Route
-      exact path='/'
-      render={() => <Home />} />
-    <Route
-      path='/pet-list'
-      render={() => <PetList />} />
-    <Route
-      path='/add-pet'
-      render={() => <AddPet />} />
-  </div>
-);
-=======
+// const Main = ({}) => (
+//   <div>
+//     <Route
+//       exact path='/'
+//       render={() => <Home />} />
+//     <Route
+//       path='/pet-list'
+//       render={() => <PetList />} />
+//     <Route
+//       path='/add-pet'
+//       render={() => <AddPet />} />
+//   </div>
+// );
 class Main extends Component {
   constructor () {
     super();
@@ -34,19 +32,19 @@ class Main extends Component {
    console.log('fetch all pets complete');
     this.setState({allPets});
   }
-  
+
   componentDidMount() {
     this.fetchAllPets();
   }
   render() {
     return (
       <div>
-        <Route 
-          exact path='/' 
+        <Route
+          exact path='/'
           render={() => <Home />} />
-        <Route 
+        <Route
           path='/find-a-pet'
-          render={() => <PetList 
+          render={() => <PetList
           allPets={this.state.allPets}
         />} />
          <Route
@@ -61,13 +59,3 @@ class Main extends Component {
 }
 
 export default Main;
-
-
-
-
-
-
-
-
-
-
