@@ -7,20 +7,6 @@ import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
 
 
-const Main = ({}) => (
-  <div>
-    <Route
-      exact path='/'
-      render={() => <Home />} />
-    <Route
-      path='/pet-list'
-      render={() => <PetList />} />
-    <Route
-      path='/add-pet'
-      render={() => <AddPet />} />
-  </div>
-);
-=======
 class Main extends Component {
   constructor () {
     super();
