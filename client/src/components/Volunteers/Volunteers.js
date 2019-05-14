@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { } from '../services/VolunteersApi'; //need this file to be created, and for the file to contain a create application function
+import  {addVolunteer}  from '../../services/volunteersApi'; //need this file to be created, and for the file to contain a create application function
 
 class NewVolunteerForm extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class NewVolunteerForm extends Component {
   async submitForm() {
     const {} = this.state
     try {
-      await createApplicant() 
+      await addVolunteer() 
       this.clearForm()
 
       alert('Application was successfully created')
