@@ -1,11 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: gray;
 }
 
 .Navbar {
   position: sticky;
+  margin: 0 10px 0 10px;
 }
 
 .Navbar ul {
@@ -14,7 +15,6 @@ body {
   list-style: none;
   color: #4E4351;
   padding: 20px 0 20px 0;
-  width: 100vw;
   background-color: white;
   opacity: .9;
 }
@@ -73,26 +73,51 @@ a {
 }
 
 .Main {
-  border: solid black;
-  background-color: lightgray;
+  background-color: white;
+  border: solid palevioletred;
   display: flex;
+  max-height: 521px;
   padding: 10px 200px 10px 200px;
+  margin: 0 10px 0 10px;
+}
+
+.About {
+  min-width: 373px;
+  max-width: inherit;
+  min-height: 546px;
+  max-height: inherit;
 }
 
 .Main img {
   margin: 10px;
+  width: 50%;
+  min-width: 332px;
   border: solid #4E4351;
 }
 
 .Footer {
-  border: solid black;
+  background-color: palevioletred;
+  position: sticky;
+  font-family: sans-serif;
+  font-size: 20pt;
+  background-image: linear-gradient(gray, lightpink, gray);
 }
 
-.Footer ul, p {
+
+.Footer img {
+  width: 50%;
+  height: 50%;
+}
+
+.Footer ul, a, p {
+  padding-top: 10px;
+  padding-bottom: -10px;
+  font-size: 14pt;
   display: flex;
   justify-content: space-evenly;
   list-style: none;
 }
+
 
 .Volunteers {
   display: flex;
