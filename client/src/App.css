@@ -71,7 +71,7 @@ a {
 
 .Main {
   border: solid black;
-  background-color: white;
+  background-color: lightgray;
   display: flex;
   padding: 10px 100px 10px 100px;
 }
@@ -125,7 +125,7 @@ a {
 .Find-a-pet {
   display: flex;
   justify-content: center;
-  background-color: blue;
+  background-color: lightgray;
 }
 
 
@@ -134,11 +134,19 @@ a {
   flex-direction: column;
   justify-content: flex-end;
   border: solid lightpink;
-  width: 250px;
+  height: 100vh;
+  width: 1250px;
+  /* flex: 3; */
   cursor: pointer;
   overflow-y: scroll;
   scroll-behavior: auto;
 }
+
+.List-item {
+  text-align: center;
+}
+
+
 
 .Pet-list img {
   border: solid lightpink;
