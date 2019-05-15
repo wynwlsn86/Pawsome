@@ -45,7 +45,13 @@ class Main extends Component {
           render={() => <AddPet />} />
         <Route
           path='/login'
-          render={() => <LogIn />} />
+          render={() => <LogIn 
+            authenticated={this.props.authenticated}
+            handleLogin={this.props.handleLogin}
+            username={this.props.username}
+            password={this.props.password}
+            handleChange={this.props.handleChange}
+            />} />
       </div>
     );
   }
