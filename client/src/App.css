@@ -39,7 +39,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid palevioletred;
   transform: scaleY(2);
   opacity: 1;
   transition: .5s;
@@ -66,6 +66,7 @@ a {
 .Navbar ul li:hover:after {
   transform: scaleY(1);
   opacity: .5;
+  background-color: palevioletred;
 }
 
 .Main {
@@ -92,13 +93,16 @@ a {
 
 .Volunteer-form {
   padding: 15px;
+  margin: 0 0 0 200px;
   width: 400px;
   border: 1px #eee solid;
+  background-color: palevioletred;
 }
 
 /* // */
 .Volunteer-form label {
   font-size: 20px;
+  color: #4E4351;
 }
 
 .Volunteer-form input {
@@ -115,4 +119,30 @@ a {
   margin-top: 10px;
   padding: 10px;
   border-radius: 5%;
+  cursor: pointer;
+}
+
+.Find-a-pet {
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+}
+
+
+
+.Pet-list {
+  flex-direction: column;
+  justify-content: flex-end;
+  border: solid lightpink;
+  width: 250px;
+  cursor: pointer;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+}
+
+.Pet-list img {
+  border: solid lightpink;
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
 }

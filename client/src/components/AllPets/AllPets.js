@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SelectedPet from '../selectedPet/SelectedPet';
 import PetList from '../PetList/PetList';
+import {styled-components} from 'styled-components';
 
 
 class AllPets extends Component {
@@ -8,10 +9,10 @@ class AllPets extends Component {
 
     render() {
         return (
-            <div>
-                <SelectedPet 
+            <div className="Find-a-pet" style="background-color: blue">
+                <SelectedPet className="Selected-pets"
                 />
-                <PetList 
+                <PetList className="Pet-list"
                 allPets={this.state.allPets}
                 />
             </div>

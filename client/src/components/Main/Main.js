@@ -5,7 +5,7 @@ import Volunteers from '../Volunteers/Volunteers'
 import { Route} from 'react-router-dom'
 import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
-import LogIn from '../Login/LogIn';
+import Login from '../Login/Login';
 
 //
 
@@ -45,7 +45,7 @@ class Main extends Component {
           render={() => <AddPet />} />
         <Route
           path='/login'
-          render={() => <LogIn />} />
+          render={() => <Login />} />
       </div>
     );
   }
