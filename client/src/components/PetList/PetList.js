@@ -11,8 +11,11 @@ class PetList extends Component {
         super(props);
         this.state = {
 <<<<<<< HEAD
+<<<<<<< HEAD
             images: [flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty]
 =======
+=======
+>>>>>>> 916bff28af52ed48f8b8e23af723b5891e5c5a8f
             images: [Flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty],
             selected: ''
 >>>>>>> 916bff28af52ed48f8b8e23af723b5891e5c5a8f
@@ -38,8 +41,12 @@ class PetList extends Component {
 
         return (
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div>
                 <SelectedPet pets={this.props.allPets} selectedPet={this.props.leSelected} />
+=======
+            <div className="Pet-list">
+>>>>>>> 916bff28af52ed48f8b8e23af723b5891e5c5a8f
 =======
             <div className="Pet-list">
 >>>>>>> 916bff28af52ed48f8b8e23af723b5891e5c5a8f

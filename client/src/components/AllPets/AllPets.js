@@ -28,6 +28,7 @@ class AllPets extends Component {
         const {allPets} = this.props
         return (
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div>
                 <SelectedPet 
                 selectId={this.state.selected}
@@ -40,6 +41,11 @@ class AllPets extends Component {
             <div className="Find-a-pet">
                 <SelectedPet className="Selected-pets"
                 />
+=======
+            <div className="Find-a-pet">
+                <SelectedPet className="Selected-pets"
+                />
+>>>>>>> 916bff28af52ed48f8b8e23af723b5891e5c5a8f
                 <PetList className="Pet-list"
                 allPets={this.props.allPets}
 >>>>>>> 916bff28af52ed48f8b8e23af723b5891e5c5a8f
