@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import Morty from '../../assets/morty.jpeg'
+import Jane from '../../assets/jane.jpeg'
+import Flopsy_peter from '../../assets/flopsy_peter.jpeg'
+import Putzie from '../../assets/putzie.jpeg'
+import Rizzo from '../../assets/rizzo.jpeg'
+import Sammi from '../../assets/sami.jpeg'
 import noCatImage from '../../assets/noCatImage.jpeg';
 
 class SelectedPet extends Component {
@@ -8,10 +14,9 @@ class SelectedPet extends Component {
             grabbedPet: '',
             petImage: '',
             petDesc: '',
-            pets: this.props.allPets
-        }
+            images: [Flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty]
     }
-
+}
 
 handleSubmit = () => {
     console.log(this.props.allPets)
@@ -21,8 +26,48 @@ componentDidMount(){
     this.handleSubmit()
 }
 
+handleDelete = () => {
+    
+}
+
 
     render() {
+        console.log(this.props.selected.id)
+        if(this.props.authenticated && this.props.isSelected){
+            return(
+                <div >
+                    <h1>{this.props.selected.name}</h1>
+                    <button>Delete</button>
+                    <button>Update</button>
+                    <img
+                        src={noCatImage}
+                        alt='test' />
+                        age, bio breed color
+                    <ul>
+                        <li>Age: {this.props.selected.age}</li>
+                        <li>Bio: {this.props.selected.bio}</li>
+                        <li>Breed: {this.props.selected.breed}</li>
+                        <li>Color: {this.props.selected.color}</li>
+                    </ul>
+                    </div>
+            )
+        }
+        else if(this.props.isSelected){
+            return(
+                <div >
+                    <h1>{this.props.selected.name}</h1>
+                    <img
+                    src={noCatImage}
+                    alt='test' />
+                    <ul>
+                        <li>Age: {this.props.selected.age}</li>
+                        <li>Bio: {this.props.selected.bio}</li>
+                        <li>Breed: {this.props.selected.breed}</li>
+                        <li>Color: {this.props.selected.color}</li>
+                    </ul>
+                </div>
+            )
+        }
         return (
             <div>
                 <div>
