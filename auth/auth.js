@@ -1,13 +1,13 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const { User } = require('../models');
+const { AuthUser } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const JWTStrategy = require('passport-jwt').Strategy
 const ExtractJWT = require('passport-jwt').ExtractJwt
 
 
-const SECRET= 'process.env.privateKey'
+const SECRET= "super secret token" //do not do this in real application. instead do this in a .env file
 
 const jwtSign = (payload) => {
     return jwt.sign(payload, SECRET);
@@ -18,9 +18,10 @@ passport.use(new JWTStrategy({
   jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken()
   }, 
   async(token, done) => {
+    console.log(`YOYOYO`)
     try {
       console.log('****** decoded token *****', token);
-      const user = await User.findByPk(token.id);
+      const user = await AuthUser.findByPk(token.id);
       console.log(`user from jwt Token: ${user}`)
 
       if (user) {
@@ -39,12 +40,11 @@ passport.use('signup', new LocalStrategy({
 }, 
 async (username, password, done) => {
     try {
-        const user = await User.create({username, password});
+        const user = await AuthUser.create({username, password});
 
         if (!user) {
             return done(null, false, {message: 'Unable to add user'})
         }
-
         done(null, user, {message: 'Successfully added user'});
     }
     catch (e) {
@@ -60,21 +60,25 @@ passport.use('login', new LocalStrategy({
   async (username, password, done) => {
     try {
       console.log('**************** username ****', username);
-      const user = await User.findOne({ where: { username: username }})
+      // find user by their username
+      const user = await AuthUser.findOne({ where: { username: username }})
       console.log(user.username);
   
       console.log(`*** user: ${user} ***`);
-  
+
       if (!user) {
         return done(null, false, { message: 'User not found'})
       }
-
-      // const validate = await bcrypt.compare(password, user.password);
-      // console.log(`*** validate: ${validate} ***`)
+  
+      // compare passwords
+      const validate = await bcrypt.compare(password, user.password);
+      console.log(`*** validate: ${validate} ***`)
   
       if (!validate) {
         return done(null, false, { message: 'Wrong password'})
       }
+  
+      // login was a success, return the user object
       return done(null, user, { message: 'Logged in successfully'})
   
     } catch(error) {
@@ -85,6 +89,7 @@ passport.use('login', new LocalStrategy({
   const authorized = (request, response, next) => {
     passport.authenticate('jwt', { session: false, }, async (error, token) => {
       if (error || !token) {
+        // response.status(401).json({ message: 'Unauthorized' });
         let err = new Error('Unauthorized');
         err.status = 401;
         next(err)
