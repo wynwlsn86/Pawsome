@@ -8,7 +8,6 @@ import { getAllPets } from '../../services/petsApi';
 import Login from '../Login/Login';
 
 
-
 class Main extends Component {
   constructor () {
     super();
@@ -20,6 +19,7 @@ class Main extends Component {
   fetchAllPets = async () => {
    const allPets =  await getAllPets();
    console.log('fetch all pets complete');
+   console.log(this.state.allPets)
     this.setState({allPets});
   }
 
