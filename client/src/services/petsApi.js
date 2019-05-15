@@ -38,3 +38,13 @@ export const putPet = async (id, data) => {
         console.log(e.message)
     }
 }
+
+export const deletePet = async (id) => {
+    try{
+        const resp = await api.delete(`/:${id}`);
+        return console.log(resp, 'deleted');
+    }
+    catch (e) {
+        console.log(e.message)
+    }
+}
