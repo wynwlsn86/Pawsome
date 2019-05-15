@@ -10,8 +10,17 @@ class PetList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            images: [flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty]
+            images: [flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty],
+            selected: ''
         }
+    }
+
+    handleClick = (e) => {
+        e.preventDefault();
+        const petSelected = parseInt(e.currentTarget.value)
+        this.setState({selected: petSelected});
+        console.log(this.state)
+
     }
 
 
@@ -25,9 +34,11 @@ class PetList extends Component {
                     <img
                     src={this.state.images[i]}
                     alt='test' />
+                    <button onClick={this.handleClick} value={pet.id}>Select</button>
                 </div>
             )
         });
+
 
         return (
             <div>
