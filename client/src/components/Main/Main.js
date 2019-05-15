@@ -5,7 +5,7 @@ import Volunteers from '../Volunteers/Volunteers'
 import { Route} from 'react-router-dom'
 import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
-import Login from '../LogIn/Login';
+import Login from '../Login/Login';
 
 
 class Main extends Component {
@@ -42,7 +42,9 @@ class Main extends Component {
            render={() => <Volunteers />} />
         <Route
           path='/add-pet'
-          render={() => <AddPet />} />
+          render={() => <AddPet 
+          authenticated={this.props.authenticated}
+          />} />
         <Route
           path='/login'
           render={() => <Login 
