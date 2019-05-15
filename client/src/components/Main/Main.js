@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
 import Login from '../Login/Login';
 import AllPets from '../AllPets/AllPets'
+import ContactUs from '../ContactUs/ContactUs'
 
 
 class Main extends Component {
@@ -42,6 +43,9 @@ class Main extends Component {
          <Route
            path='/volunteers'
            render={() => <Volunteers />} />
+         <Route
+           path='/contact-us'
+           render={() => <ContactUs />} />
         <Route
           path='/add-pet'
           render={() => <AddPet

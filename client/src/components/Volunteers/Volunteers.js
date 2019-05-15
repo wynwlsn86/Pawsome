@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ollyrhae from '../../assets/ollyrhae.jpg'
+
 import {addVolunteer} from '../../services/volunteersApi'
 
 
@@ -63,8 +65,9 @@ class NewVolunteerForm extends Component {
 
   render() {
     return (
-      <div>
-        <h2>New Volunteer Form</h2>
+    <div className="Wrapper">
+      <div className='Volunteers'>
+        <img className="Form-photo-fill" src={ollyrhae} alt='' />
 
         <form className="Volunteer-form" onSubmit={this.handleSubmitForm}>
           <div>
@@ -151,6 +154,7 @@ class NewVolunteerForm extends Component {
         </form>
 
       </div>
+    </div>
     )
   }
 
