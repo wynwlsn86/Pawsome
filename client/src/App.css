@@ -73,7 +73,7 @@ a {
   border: solid black;
   background-color: lightgray;
   display: flex;
-  padding: 10px 100px 10px 100px;
+  padding: 10px 200px 10px 200px;
 }
 
 .Main img {
@@ -91,15 +91,34 @@ a {
   list-style: none;
 }
 
+.Volunteers {
+  display: flex;
+}
+
+.Wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.Volunteer-heading {
+  text-align: center;
+}
+
+.Form-photo-fill {
+  width: 500px;
+  height: 100vh;
+  margin: 0 0 0 200px;
+  border: 2px palevioletred solid;
+
+}
 .Volunteer-form {
   padding: 15px;
-  margin: 0 0 0 200px;
+  margin: 0 0 0 0px;
   width: 400px;
-  border: 1px #eee solid;
+  border: 2px lightgray solid;
   background-color: palevioletred;
 }
 
-/* // */
 .Volunteer-form label {
   font-size: 20px;
   color: #4E4351;
@@ -133,10 +152,10 @@ a {
 .Pet-list {
   flex-direction: column;
   justify-content: flex-end;
-  border: solid lightpink;
+  border: solid gray;
+  background-color: palevioletred;
   height: 100vh;
   width: 1250px;
-  /* flex: 3; */
   cursor: pointer;
   overflow-y: scroll;
   scroll-behavior: auto;
@@ -145,8 +164,6 @@ a {
 .List-item {
   text-align: center;
 }
-
-
 
 .Pet-list img {
   border: solid lightpink;

@@ -6,49 +6,36 @@ import PetList from '../PetList/PetList';
 class AllPets extends Component {
     constructor(){
         super();
-        this.state={
-            selected: '',
-            petSelected: false
+        this.state = {
+            selected: {},
+            isSelected: false
         }
-        this.handleClicked = this.handleClicked.bind(this);
     }
 
-    handleClicked(e){
+    handleClick = (e) => {
         e.preventDefault();
-        console.log('handle click in pets ****')
-        const chosenPet = parseInt(e.target.value)
-        this.setState({
-            selected: chosenPet,
-            petSelected: !petSelected
-        });
+        const selected = this.props.allPets[e.target.value];
+        console.log(selected);
+        console.log(e.target.value, 'value')
+        console.log(this.props.allPets)
+        this.setState({selected});
         console.log(this.state)
+        this.setState({isSelected: true})
+
     }
 
     render() {
-        const {allPets} = this.props
         return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <div>
+            <div className="Find-a-pet">
                 <SelectedPet 
-                selectId={this.state.selected}
+                    className="Selected-pets"
+                    selected={this.state.selected}
+                    isSelected={this.state.isSelected}
+                    authenticated={this.props.authenticated}
                 />
-                <PetList 
-                handleClicked={this.handleClicked}
-                leSelected={this.state.selected}
-                allPets={allPets}
-=======
-            <div className="Find-a-pet">
-                <SelectedPet className="Selected-pets"
-                />
-=======
-            <div className="Find-a-pet">
-                <SelectedPet className="Selected-pets"
-                />
->>>>>>> 916bff28af52ed48f8b8e23af723b5891e5c5a8f
                 <PetList className="Pet-list"
+                handleClick={this.handleClick}
                 allPets={this.props.allPets}
->>>>>>> 916bff28af52ed48f8b8e23af723b5891e5c5a8f
                 />
             </div>
         );

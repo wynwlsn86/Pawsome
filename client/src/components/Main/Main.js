@@ -1,12 +1,12 @@
 import AddPet from '../AddPet/AddPet';
 import Home from '../Home/Home';
-import PetList from '../PetList/PetList'
 import Volunteers from '../Volunteers/Volunteers'
 import { Route} from 'react-router-dom'
 import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
 import Login from '../Login/Login';
 import AllPets from '../AllPets/AllPets'
+import ContactUs from '../ContactUs/ContactUs'
 
 
 class Main extends Component {
@@ -37,10 +37,14 @@ class Main extends Component {
           path='/find-a-pet'
           render={() => <AllPets
           allPets={this.state.allPets}
+          authenticated={this.props.authenticated}
         />} />
          <Route
            path='/volunteers'
            render={() => <Volunteers />} />
+         <Route
+           path='/contact-us'
+           render={() => <ContactUs />} />
         <Route
           path='/add-pet'
           render={() => <AddPet
