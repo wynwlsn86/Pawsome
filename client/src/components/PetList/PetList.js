@@ -7,8 +7,8 @@ import Rizzo from '../../assets/rizzo.jpeg'
 import Sammi from '../../assets/sami.jpeg'
 import SelectedPet from '../selectedPet/SelectedPet';
 class PetList extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             images: [flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty]
         }
@@ -16,6 +16,7 @@ class PetList extends Component {
 
 
     render() {
+        console.log(this.props)
        const petList = this.props.allPets.map((pet, i) => {
            return (
                //give these divs a border and either an onHover or a cursor pointer
@@ -30,7 +31,6 @@ class PetList extends Component {
 
         return (
             <div>
-                <SelectedPet />
                 {petList}
             </div>
         );

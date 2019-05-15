@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { addPet } from '../../services/petsApi'
+import { addPet } from '../../services/petsApi';
+import { Redirect } from 'react-router-dom'; 
 
 class AddPet extends Component {
     constructor () {
@@ -53,6 +54,9 @@ class AddPet extends Component {
     }
 
     render() {
+        if(!this.props.authenticated){
+            return <Redirect to='/login' />
+        }
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>

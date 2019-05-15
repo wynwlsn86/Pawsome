@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SelectedPet from '../selectedPet/SelectedPet';
 import PetList from '../PetList/PetList';
-import {styled-components} from 'styled-components';
 
 
 class AllPets extends Component {
