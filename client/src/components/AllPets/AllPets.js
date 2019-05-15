@@ -8,10 +8,10 @@ class AllPets extends Component {
 
     render() {
         return (
-            <div>
-                <SelectedPet 
+            <div className="Find-a-pet">
+                <SelectedPet className="Selected-pets"
                 />
-                <PetList 
+                <PetList className="Pet-list"
                 allPets={this.props.allPets}
                 />
             </div>
