@@ -6,6 +6,7 @@ import Putzie from '../../assets/putzie.jpeg'
 import Rizzo from '../../assets/rizzo.jpeg'
 import Sammi from '../../assets/sami.jpeg'
 import noCatImage from '../../assets/noCatImage.jpeg';
+import axios from 'axios'
 
 class SelectedPet extends Component {
     constructor(props){
@@ -23,8 +24,9 @@ componentDidUpdate(){
     console.log(this.state.grabbedId)
 }
 
-handleDelete = () => {
-    
+handleDelete = async (e, id) => { 
+    e.preventDefault();
+    await axios.delete(`http://localhost:5000/pets/${this.props.selected.id}`)
 }
 
 
@@ -34,7 +36,7 @@ handleDelete = () => {
             return(
                 <div >
                     <h1>{this.props.selected.name}</h1>
-                    <button>Delete</button>
+                    <button onClick={this.handleDelete}>Delete</button>
                     <button>Update</button>
                     <img
                         src={noCatImage}

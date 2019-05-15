@@ -36,6 +36,7 @@ class AllPets extends Component {
                 <PetList className="Pet-list"
                 handleClick={this.handleClick}
                 allPets={this.props.allPets}
+                selected={this.state.selected}
                 />
             </div>
         );
