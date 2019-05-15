@@ -38,6 +38,7 @@ class Main extends Component {
           path='/find-a-pet'
           render={() => <AllPets
           allPets={this.state.allPets}
+          authenticated={this.props.authenticated}
         />} />
          <Route
            path='/volunteers'
