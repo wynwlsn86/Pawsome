@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Morty from '../../assets/morty.jpeg'
 import Jane from '../../assets/jane.jpeg'
-import flopsy_peter from '../../assets/flopsy_peter.jpeg'
+import Flopsy_peter from '../../assets/flopsy_peter.jpeg'
 import Putzie from '../../assets/putzie.jpeg'
 import Rizzo from '../../assets/rizzo.jpeg'
 import Sammi from '../../assets/sami.jpeg'
@@ -10,7 +10,12 @@ class PetList extends Component {
     constructor(props){
         super(props);
         this.state = {
+<<<<<<< HEAD
             images: [flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty]
+=======
+            images: [Flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty],
+            selected: ''
+>>>>>>> 916bff28af52ed48f8b8e23af723b5891e5c5a8f
         }
     }
 
@@ -20,9 +25,9 @@ class PetList extends Component {
        const petList = this.props.allPets.map((pet, i) => {
            return (
                //give these divs a border and either an onHover or a cursor pointer
-                <div>
+                <div className="List-item">
                     <h1>{pet.name}</h1>
-                    <img 
+                    <img
                     src={this.state.images[i]}
                     alt='test' />
                     <button onClick={this.props.handleClicked} value={pet.id}>Select</button>
@@ -32,8 +37,12 @@ class PetList extends Component {
 
 
         return (
+<<<<<<< HEAD
             <div>
                 <SelectedPet pets={this.props.allPets} selectedPet={this.props.leSelected} />
+=======
+            <div className="Pet-list">
+>>>>>>> 916bff28af52ed48f8b8e23af723b5891e5c5a8f
                 {petList}
             </div>
         );

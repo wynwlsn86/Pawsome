@@ -6,6 +6,7 @@ import { Route} from 'react-router-dom'
 import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
 import Login from '../Login/Login';
+import AllPets from '../AllPets/AllPets'
 
 
 class Main extends Component {
@@ -34,7 +35,7 @@ class Main extends Component {
           render={() => <Home />} />
         <Route
           path='/find-a-pet'
-          render={() => <PetList
+          render={() => <AllPets
           allPets={this.state.allPets}
         />} />
          <Route
@@ -42,16 +43,20 @@ class Main extends Component {
            render={() => <Volunteers />} />
         <Route
           path='/add-pet'
-          render={() => <AddPet />} />
+          render={() => <AddPet
+          authenticated={this.props.authenticated}
+          />} />
         <Route
           path='/login'
-          render={() => <Login 
+
+          render={() => <Login
             authenticated={this.props.authenticated}
             handleLogin={this.props.handleLogin}
             username={this.props.username}
             password={this.props.password}
             handleChange={this.props.handleChange}
             />} />
+
       </div>
     );
   }
