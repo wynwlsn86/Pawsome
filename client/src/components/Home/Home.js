@@ -10,12 +10,20 @@ function Home() {
          <img src="https://via.placeholder.com/250" alt="pet photos" ALIGN="left"/>
             <div>
               <h1>
-                HEADER
+                Pawsome Animal Rescue
               </h1>
-                <p>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+                <h4>
+                Pawsome Pet Adoptions" is based on Long Island, NY, it's purpose is to find
+animal loving, helpful, caring, and responsible fosters, adopters, friends,
+and forever homes for all pets in need. We stem from an up and coming rescue
+"Pawsome Animal Rescue" and we understand the desperate need to share each
+animal, their story, and give them the exposure they need to find the right
+family. Our goals are advocacy, outreach, education, rescue, and adoptions
+for ANY and ALL animals in need. We help people with pets and all animals in
+tough situations. Please post, cross post and share, if we all do our part
+we can be the voice that they don't have and help them find their happily
+ever afters.
+                </h4>
             </div>
        </div>
     </div>
