@@ -10,22 +10,13 @@ class PetList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            images: [flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty],
-            selected: ''
+            images: [flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty]
         }
-    }
-
-    handleClick = (e) => {
-        e.preventDefault();
-        const petSelected = parseInt(e.currentTarget.value)
-        this.setState({selected: petSelected});
-        console.log(this.state)
-
     }
 
 
     render() {
-        console.log(this.props)
+        // console.log(this.props.onHandleClicked)
        const petList = this.props.allPets.map((pet, i) => {
            return (
                //give these divs a border and either an onHover or a cursor pointer
@@ -34,7 +25,7 @@ class PetList extends Component {
                     <img 
                     src={this.state.images[i]}
                     alt='test' />
-                    <button onClick={this.handleClick} value={pet.id}>Select</button>
+                    <button onClick={this.props.handleClicked} value={pet.id}>Select</button>
                 </div>
             )
         });
@@ -42,7 +33,7 @@ class PetList extends Component {
 
         return (
             <div>
-                <SelectedPet props={this.props.allPets} />
+                <SelectedPet pets={this.props.allPets} selectedPet={this.props.leSelected} />
                 {petList}
             </div>
         );
