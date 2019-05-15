@@ -20,16 +20,6 @@ class SelectedPet extends Component {
 }
 
 
-componentDidUpdate(){
-    console.log(this.state.grabbedId)
-}
-
-handleDelete = async (e, id) => { 
-    e.preventDefault();
-    await axios.delete(`http://localhost:5000/pets/${this.props.selected.id}`)
-}
-
-
     render() {
         console.log(this.props.selected.id)
         if(this.props.authenticated && this.props.isSelected){
