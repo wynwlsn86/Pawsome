@@ -1,46 +1,21 @@
 import React, { Component } from 'react';
-import { login } from '../../services/authApi'
+import { Redirect } from 'react-router-dom';
 
 class LogInForm extends Component {
-    constructor(){
-        super();
-        this.state = {
-            username: '',
-            password: ''
-        }
-        this.handleLogin = this.handleLogin.bind(this);
-    }
 
-    handleChange = (e) => {
-        const key = e.target.name;
-        const value = e.target.value;
-        console.log(key)
-        console.log(value)
-        this.setState(prevState => {
-            return {[key]: value}});
-    }
-    async handleLogin() {
-        try {
-            const { username, password} = this.state;
-            console.log(username, password);
-            const response = await login({username, password});
-            console.log(response);
-            this.setState({
-                isAuthenticated: true
-            })
-        }
-        catch (e) {
-            console.log(e.message);
-        }
-      }
+
+
 
     handleSubmitForm = (event) => {
         event.preventDefault();
         console.log('submitted');
-        this.handleLogin();
+        this.props.handleLogin();
       }
 
     render() {
+        if(this.props.authenticated){
+            return <Redirect to='/add-pet' />
+        }
         return (
             <div>
                 <from onSubmit={this.handleSubmitForm}>
@@ -48,15 +23,15 @@ class LogInForm extends Component {
                     <input 
                         type='text' placeholder='Enter Username' 
                         name='username'
-                        onChange={this.handleChange}
-                        value={this.state.usrname}
+                        onChange={this.props.handleChange}
+                        value={this.props.username}
                     />
                     <lable>Password:</lable>
                     <input
                         type='password' placeholder='Enter Password' 
                         name='password'
-                        onChange={this.handleChange}
-                        value={this.state.password}
+                        onChange={this.props.handleChange}
+                        // value={this.props.password}
                     />
                     <button type='submit' onClick={this.handleSubmitForm}>LOG IN</button>
                 </from>
