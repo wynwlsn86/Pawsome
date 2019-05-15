@@ -2,6 +2,26 @@ import React, { Component } from 'react';
 import noCatImage from '../../assets/noCatImage.jpeg';
 
 class SelectedPet extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            grabbedPet: '',
+            petImage: '',
+            petDesc: '',
+            pets: this.props.allPets
+        }
+    }
+
+
+handleSubmit = () => {
+    console.log(this.props.allPets)
+}
+
+componentDidMount(){
+    this.handleSubmit()
+}
+
+
     render() {
         return (
             <div>

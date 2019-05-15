@@ -5,7 +5,7 @@ import Volunteers from '../Volunteers/Volunteers'
 import { Route} from 'react-router-dom'
 import React, { Component } from 'react';
 import { getAllPets } from '../../services/petsApi';
-import LogIn from '../LogIn/Login';
+import LogIn from '../Login/Login';
 
 
 
@@ -20,6 +20,7 @@ class Main extends Component {
   fetchAllPets = async () => {
    const allPets =  await getAllPets();
    console.log('fetch all pets complete');
+   console.log(this.state.allPets)
     this.setState({allPets});
   }
 

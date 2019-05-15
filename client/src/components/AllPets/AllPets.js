@@ -12,7 +12,7 @@ class AllPets extends Component {
                 <SelectedPet 
                 />
                 <PetList 
-                allPets={this.state.allPets}
+                allPets={this.props.allPets}
                 />
             </div>
         );
