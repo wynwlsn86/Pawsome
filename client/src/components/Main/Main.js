@@ -29,7 +29,7 @@ class Main extends Component {
     this.setState({allPets});
   }
 
-  handleDelete = async (e, id) => { 
+  handleDelete = async (e, id) => {
     console.log('delete clicked')
     const deletedPet = this.state.selected.id
     await axios.delete(`http://localhost:5000/pets/${deletedPet}`)
@@ -38,9 +38,9 @@ class Main extends Component {
 
   handleSelected = (e) => {
     e.preventDefault();
-    const selected = this.state.allPets[e.target.value];
+    const selected = this.state.allPets[e.target.id];
     console.log(selected);
-    console.log(e.target.value, 'value')
+    console.log(e.target.id, 'value')
     console.log(this.state.allPets)
     this.setState({selected});
     console.log(this.state)

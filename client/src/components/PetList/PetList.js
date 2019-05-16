@@ -25,8 +25,10 @@ class PetList extends Component {
                     <h1>{pet.name}</h1>
                     <img
                     src={pet.image}
-                    alt='test' />
-                    <button onClick={this.props.handleSelected} value={pet.id -1}>Select</button>
+                    alt='test'
+                    onClick={this.props.handleSelected}
+                    id={pet.id -1}
+                    />
                 </div>
             )
         });
