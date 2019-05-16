@@ -4,7 +4,7 @@ import LogInForm from '../LogInForm/LogInForm'
 class Login extends Component {
     render() {
         return (
-            <div>
+            <div className='Main'>
                 <LogInForm
                     authenticated={this.props.authenticated}
                     handleLogin={this.props.handleLogin}

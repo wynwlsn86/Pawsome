@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import biggie from '../../assets/biggie.jpg'
+import harvey from '../../assets/harvey.png'
 
 import {addVolunteer} from '../../services/volunteersApi'
 
@@ -11,10 +11,7 @@ class NewContactForm extends Component {
       name: "",
       phone: '',
       email: '',
-      address: '',
-      city: '',
-      state: '',
-      zip: null,
+      message: '',
       formtoggle: false
     }
     this.handleTextInput = this.handleTextInput.bind(this)
@@ -25,7 +22,7 @@ class NewContactForm extends Component {
     const data = this.state
     try {
       await addVolunteer(data)
-      alert('Application was successfully created')
+      alert('Message was successfully submitted')
     } catch(error) {
       console.log(error)
       alert('There was an error submitting')
@@ -37,10 +34,7 @@ class NewContactForm extends Component {
       name: "",
       phone: '',
       email: '',
-      address: '',
-      city: '',
-      state: '',
-      zip: null
+      message: ''
     })
   }
 
@@ -65,11 +59,15 @@ class NewContactForm extends Component {
 
   render() {
     return (
-    <div className="Wrapper">
-      <h1>Contact Us</h1>
-      <div className='Volunteers'>
-        <img className="Form-photo-fill" src={biggie} alt='' />
+    <div>
+    <div className="Main">
 
+      <div className='Volunteers'>
+
+        <img className="Form-photo-fill" src={harvey} alt='' />
+
+<div className='Wrapper'>
+<h1>Contact Us</h1>
         <form className="Volunteer-form" onSubmit={this.handleSubmitForm}>
           <div>
             <label>Name:</label>
@@ -101,7 +99,7 @@ class NewContactForm extends Component {
             />
           </div>
 
-          <div>
+          <div className='Message-field'>
             <label>Message:</label>
             <input
               type="text"
@@ -115,6 +113,8 @@ class NewContactForm extends Component {
         </form>
 
       </div>
+    </div>
+    </div>
     </div>
     )
   }
