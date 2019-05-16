@@ -8,6 +8,11 @@ const authRouter = require('./routes/authRoutes');
 const { volRouter } = require('./routes/volunteersRoutes');
 const loggedInRoutes = require('./routes/loggedInRoutes');
 
+const { userRouter } = require('./routes/userRoutes');
+const { adopterRouter} = require('./routes/adopterRoutes');
+
+
+
 const { authorized } = require('./auth/auth');
 const { userRouter } = require('./routes/UserRoutes');
 const { awsRouter } = require('./routes/awsRoutes');
@@ -24,6 +29,7 @@ app.use(passport.initialize());
 
 app.use('/pets', petRouter)
 app.use('/auth', authRouter);
+app.use('/adopters', adopterRouter)
 app.use('/app', authorized, loggedInRoutes);
 app.use('/volunteers', volRouter)
 app.use('/users', userRouter)

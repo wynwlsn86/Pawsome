@@ -20,7 +20,7 @@ export const getAllVolunteers= async () => {
 
 export const getOneVolunteer = async (id) => {
     try{
-        const resp = await api.get(`/:${id}`);
+        const resp = await api.get(`/${id}`);
         return resp.json;
     }
     catch (e) {
@@ -41,7 +41,7 @@ export const addVolunteer = async (data) => {
 
 export const updateVolunteer = async (id, data) => {
     try{
-        const resp = await api.put(`/:(${id})`, data);
+        const resp = await api.put(`/(${id})`, data);
         return resp.json
     }
     catch(e){
