@@ -9,14 +9,16 @@ class AllPets extends Component {
         super();
         this.state = {
             selected: {},
-            isSelected: false
+            isSelected: false,
+            isDeleted: false
         }
     }
 
     handleDelete = async (e, id) => { 
-        e.preventDefault();
         const deletedPet = this.state.selected.id
         await axios.delete(`http://localhost:5000/pets/${deletedPet}`)
+        this.setState({isDeleted: true})
+        alert('pet has been deleted')
     }
 
     handleClick = (e) => {
@@ -37,6 +39,7 @@ class AllPets extends Component {
                 <SelectedPet 
                     className="Selected-pets"
                     selected={this.state.selected}
+                    onHandleDelete={this.handleDelete}
                     isSelected={this.state.isSelected}
                     authenticated={this.props.authenticated}
                 />

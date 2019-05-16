@@ -26,7 +26,7 @@ class SelectedPet extends Component {
             return(
                 <div >
                     <h1>{this.props.selected.name}</h1>
-                    <button onClick={this.handleDelete}>Delete</button>
+                    <button onClick={this.props.onHandleDelete}>Delete</button>
                     <button>Update</button>
                     <img
                         src={noCatImage}
