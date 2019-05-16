@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import biggie from '../../assets/biggie.jpg'
+import { Redirect } from 'react-router-dom'
 
 import {addVolunteer} from '../../services/volunteersApi'
 
@@ -23,13 +24,20 @@ class NewVolunteerForm extends Component {
 
   async submitForm() {
     const data = this.state
-    try {
-      await addVolunteer(data)
-      alert('Application was successfully created')
-    } catch(error) {
-      console.log(error)
-      alert('There was an error submitting')
+    if(!this.state.name || !this.state.phone || !this.state.address){
+      alert('Name, Phone Number, and Address are Required')
     }
+    else{
+      try {
+        await addVolunteer(data)
+        alert('Application was successfully created');
+        this.setState({formtoggle: true})
+      } catch(error) {
+        console.log(error)
+        alert('There was an error submitting')
+      }
+    }
+
   }
 
   clearForm() {
@@ -64,6 +72,9 @@ class NewVolunteerForm extends Component {
   }
 
   render() {
+    if(this.state.formtoggle){
+      return <Redirect to='/' />
+    }
     return (
   <div>
 
@@ -153,7 +164,9 @@ class NewVolunteerForm extends Component {
               value={this.state.num_of_pets}
             />
           </div>
-
+          <div> </div>
+          <div> </div>
+          <div> </div>
           <button>Submit Volunteer Application</button>
         </form>
 

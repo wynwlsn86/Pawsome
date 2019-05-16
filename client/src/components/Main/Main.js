@@ -58,7 +58,11 @@ class Main extends Component {
       <div>
         <Route
           exact path='/'
-          render={() => <Home />} />
+          render={() => <Home 
+            fetchAllPets={this.fetchAllPets}
+            />} 
+          
+          />
         <Route
           path='/find-a-pet'
           render={() => <AllPets
