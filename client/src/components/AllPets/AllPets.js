@@ -39,14 +39,13 @@ class AllPets extends Component {
             <div className="Find-a-pet">
                 <SelectedPet 
                     className="Selected-pets"
-
                     selected={this.state.selected}
-                    onHandleDelete={this.handleDelete}
+                    onDelete={this.handleDelete}
                     isSelected={this.state.isSelected}
                     authenticated={this.props.authenticated}
                 />
                 <PetList className="Pet-list"
-                handleSelected={this.props.handleSelected}
+                onHandleClick={this.handleClick}
                 allPets={this.props.allPets}
                 selected={this.state.selected}
                 />
