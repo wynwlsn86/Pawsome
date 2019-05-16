@@ -1,7 +1,8 @@
 const express = require('express');
 const adopterRouter = express.Router();
 
-const { Adopter } = require('../models');
+const { Adopter, Pet } = require('../models');
+
 
 // represents localhost:PORT/adopters/
 
@@ -20,6 +21,9 @@ adopterRouter.get('/', async (req, res) => {
 adopterRouter.post('/', async (req, res) => {
   try {
     const postedAdopter = await Adopter.create(req.body);
+    const petId = parseInt(req.body.animal_id)
+    const petFind = await Pet.findByPk(petId)
+    await postedAdopter.addPet(petFind)
     res.send(postedAdopter);
   } catch (e) {
     console.log(e.message);
