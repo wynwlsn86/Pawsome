@@ -20,21 +20,13 @@ class SelectedPet extends Component {
         }
     }
 
-    handleSubmit = () => {
-        console.log(this.props.allPets)
-    }
-
-    componentDidMount(){
-        this.handleSubmit()
-    }
-
     render() {
         console.log(this.props.selected.id)
         if(this.props.authenticated && this.props.isSelected){
             return(
                 <div className="Selected-pets">
                     <h1>{this.props.selected.name}</h1>
-                    <button>Delete</button>
+                    <button onClick={this.props.onDelete}>Delete</button>
                     <Link to='/update-pet'><button>Update</button></Link>
                     {/* <Route
                     path='/update-pet'
