@@ -10,6 +10,7 @@ class PetList extends Component {
         super(props);
         this.state = {
             images: [Flopsy_peter, Jane, Sammi, Rizzo, Putzie, Morty],
+
         }
     }
 
@@ -25,7 +26,7 @@ class PetList extends Component {
                     <img
                     src={this.state.images[i]}
                     alt='test' />
-                    <button onClick={this.props.handleClick} value={pet.id}>Select</button>
+                    <button onClick={this.props.handleClick} value={pet.id -1}>Select</button>
                 </div>
             )
         });

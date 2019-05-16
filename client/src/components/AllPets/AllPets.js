@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 import SelectedPet from '../selectedPet/SelectedPet';
 import PetList from '../PetList/PetList';
+import axios from 'axios'
 
 
 class AllPets extends Component {
+
     constructor(){
         super();
         this.state = {
             selected: {},
-            isSelected: false
+            isSelected: false,
+            isDeleted: false
         }
+    }
+
+    handleDelete = async (e, id) => { 
+        const deletedPet = this.state.selected.id
+        await axios.delete(`http://localhost:5000/pets/${deletedPet}`)
+        this.setState({isDeleted: true})
+        alert('pet has been deleted')
     }
 
     handleClick = (e) => {
@@ -29,13 +39,16 @@ class AllPets extends Component {
             <div className="Find-a-pet">
                 <SelectedPet
                     className="Selected-pets"
+
                     selected={this.state.selected}
+                    onHandleDelete={this.handleDelete}
                     isSelected={this.state.isSelected}
                     authenticated={this.props.authenticated}
                 />
                 <PetList className="Pet-list"
-                handleClick={this.handleClick}
+                handleSelected={this.props.handleSelected}
                 allPets={this.props.allPets}
+                selected={this.state.selected}
                 />
             </div>
         );

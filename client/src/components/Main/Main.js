@@ -1,6 +1,6 @@
 import AddPet from '../AddPet/AddPet';
 import Home from '../Home/Home';
-import PetList from '../PetList/PetList'
+import UpdatePet from '../UpdatePet/UpdatePet'
 import Volunteers from '../Volunteers/Volunteers'
 import { Route} from 'react-router-dom'
 import React, { Component } from 'react';
@@ -14,7 +14,9 @@ class Main extends Component {
   constructor () {
     super();
     this.state = {
-        allPets: []
+        allPets: [],
+        selected: {},
+        isSelected: false
     }
   }
 
@@ -24,6 +26,19 @@ class Main extends Component {
    console.log(this.state.allPets)
     this.setState({allPets});
   }
+
+  handleSelected = (e) => {
+    e.preventDefault();
+    const selected = this.state.allPets[e.target.value];
+    console.log(selected);
+    console.log(e.target.value, 'value')
+    console.log(this.state.allPets)
+    this.setState({selected});
+    console.log(this.state)
+    this.setState({isSelected: true})
+
+}
+
 
   componentDidMount() {
     this.fetchAllPets();
@@ -39,6 +54,9 @@ class Main extends Component {
           render={() => <AllPets
           allPets={this.state.allPets}
           authenticated={this.props.authenticated}
+          handleSelected={this.handleSelected}
+          selected={this.state.selected}
+          isSelected={this.state.isSelected}
         />} />
          <Route
            path='/volunteers'
@@ -50,6 +68,13 @@ class Main extends Component {
           path='/add-pet'
           render={() => <AddPet
           authenticated={this.props.authenticated}
+          />} />
+        <Route
+          path='/update-pet'
+          render={() => <UpdatePet
+          authenticated={this.props.authenticated}
+          selected={this.state.selected}
+          isSelected={this.state.isSelected}
           />} />
         <Route
           path='/login'
