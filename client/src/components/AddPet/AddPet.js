@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { addPet } from '../../services/petsApi';
 import { Redirect } from 'react-router-dom';
+import Axios from 'axios';
 
 class AddPet extends Component {
     constructor () {
@@ -14,7 +15,7 @@ class AddPet extends Component {
             breed: null,
             medical: null,
             bio: null,
-            image: null,
+            image: '',
             createdPet: false
         }
         this.handleChange = this.handleChange.bind(this);
@@ -27,8 +28,39 @@ class AddPet extends Component {
         // this.handleSubmit = this.handleSubmit.buind(this);
     }
 
+    //onchange set image to state out of base code
+    handleImageConvert = (e) => {
+        e.preventDefault();
+            // let reader = new FileReader();
+            let image = e.target.files[0];
+            console.log(e.target.files[0]);
+            this.setState({
+                image
+            })
+
+    }
+
+
+    handleUpload = async (e) => {
+        e.preventDefault();
+        const formData = await new FormData();
+        await formData.append('image', this.state.image)
+        await Axios.post('http://localhost:5000/image/image-upload', formData, {
+            headers: {
+                'Content-Type': 'image/jpeg'
+            }   
+        })
+        .then(response => {
+            console.log(response);
+            const image = response.data.imageUrl;
+            this.setState({image})
+        })
+        .catch(error => console.log(error.message))
+    }
+
     handleSubmit = async(e) => {
         e.preventDefault();
+        console.log('submitted');
         let newPet = {
             name: this.state.name,
             age: this.state.age,
@@ -127,13 +159,14 @@ class AddPet extends Component {
                     />
                     <label>Image:</label>
                     <input
-                        type='input'
+                        type='file'
                         placeholder='Image File'
                         id='image'
                         name='image'
-                        onChange={this.handleChange}
+                        onChange={e => this.handleImageConvert(e)}
                     />
-                    <button>Submit</button>
+                    <button onClick={this.handleUpload}>UPLOAD FILE</button>
+                    <button onClick={this.handleSubmit}>Submit</button>
                 </form>
             </div>
         );
