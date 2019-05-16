@@ -44,7 +44,7 @@ export const putPet = async (id, data) => {
 
 export const deletePet = async (id) => {
     try{
-        const resp = await api.delete(`/:${id}`);
+        const resp = await api.delete(`/${id}`);
         return console.log(resp, 'deleted');
     }
     catch (e) {
