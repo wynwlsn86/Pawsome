@@ -31,8 +31,11 @@ export const addPet = async (data) => {
 
 export const putPet = async (id, data) => {
     try{
-        const resp = await api.put(`/:(${id})`, data);
-        return resp.json
+        console.log(id, 'id')
+        console.log(data, 'data')
+        const resp = await api.put(`/${id}`, data);
+        console.log(resp.json);
+        return resp.json;
     }
     catch(e){
         console.log(e.message)

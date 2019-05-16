@@ -5,6 +5,7 @@ import axios from 'axios'
 
 
 class AllPets extends Component {
+
     constructor(){
         super();
         this.state = {
@@ -38,13 +39,14 @@ class AllPets extends Component {
             <div className="Find-a-pet">
                 <SelectedPet 
                     className="Selected-pets"
+
                     selected={this.state.selected}
                     onHandleDelete={this.handleDelete}
                     isSelected={this.state.isSelected}
                     authenticated={this.props.authenticated}
                 />
                 <PetList className="Pet-list"
-                handleClick={this.handleClick}
+                handleSelected={this.props.handleSelected}
                 allPets={this.props.allPets}
                 selected={this.state.selected}
                 />

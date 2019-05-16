@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { addPet } from '../../services/petsApi';
-import { Redirect } from 'react-router-dom';
+import { putPet } from '../../services/petsApi';
+import {Redirect} from 'react-router-dom';
 
-class AddPet extends Component {
+class UpdatePet extends Component {
     constructor () {
         super();
         this.state = {
@@ -15,16 +15,28 @@ class AddPet extends Component {
             medical: null,
             bio: null,
             image: null,
-            createdPet: false
+            updatedPet: false
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this); // bind it, don't buind it.
+    }
+    handleFill = () => {
+        const name = this.props.selected.name;
+        const age = this.props.selected.age;
+        const species = this.props.selected.species;
+        const color = this.props.selected.color;
+        const gender = this.props.selected.gender;
+        const breed = this.props.selected.breed;
+        const medical = this.props.selected.medical;
+        const bio = this.props.selected.bio;
+        const image = this.props.selected.image;
+        this.setState({name, age, species, color, gender, breed, medical, bio, image})
     }
 
-    handleSubmit = (e) => {
-
-
-        // this.handleSubmit = this.handleSubmit.buind(this);
+    handleChange = (e) => {
+        const element = e.target;
+        const name = element.name;
+        const value = element.value;
+        console.log(name, value)
+        this.setState({[name]: value});
     }
 
     handleSubmit = async(e) => {
@@ -40,26 +52,25 @@ class AddPet extends Component {
             bio: this.state.bio,
             image: this.state.image
         }
-        await addPet(newPet);
-        this.setState({createdPet: true});
+        let id = Number(this.props.selected.id)
+        console.log(this.props.selected.id, 'pre parse');
+        console.log(id);
+        console.log(typeof id);
+        await putPet(id, newPet);
+        this.setState({updatedPet: true});
+
     }
 
-
-    handleChange = (e) => {
-        const el = e.target;
-        const name = el.name;
-        const value = el.value;
-        console.log(name, value)
-        this.setState({[name]: value});
+    componentDidMount = () => {
+        this.handleFill();
     }
-
     render() {
-        if(!this.props.authenticated){
-            return <Redirect to='/login' />
+        if(this.state.updatedPet){
+            return <Redirect to='/' />
         }
         return (
             <div className="Wrapper">
-              <h1>Add a New Pet</h1>
+              <h1>Update Pet</h1>
                 <form className="Volunteer-form" onSubmit={this.handleSubmit}>
                     <label>Name:</label>
                     <input
@@ -67,6 +78,7 @@ class AddPet extends Component {
                         placeholder='Pet Name'
                         id='name'
                         name='name'
+                        value={this.state.name}
                         onChange={this.handleChange}
                     />
                     <label>Age:</label>
@@ -75,6 +87,7 @@ class AddPet extends Component {
                         placeholder='Age'
                         id='age'
                         name='age'
+                        value={this.state.age}
                         onChange={this.handleChange}
                     />
                     <label>Species:</label>
@@ -83,6 +96,7 @@ class AddPet extends Component {
                         placeholder='Species'
                         id='species'
                         name='species'
+                        value={this.state.species}
                         onChange={this.handleChange}
                     />
                     <label>Color:</label>
@@ -91,6 +105,7 @@ class AddPet extends Component {
                         placeholder='Color'
                         id='color'
                         name='color'
+                        value={this.state.color}
                         onChange={this.handleChange}
                     />
                     <label>Gender:</label>
@@ -99,6 +114,7 @@ class AddPet extends Component {
                         placeholder='Gender'
                         id='gender'
                         name='gender'
+                        value={this.state.gender}
                         onChange={this.handleChange}
                     />
                     <label>Breed:</label>
@@ -107,6 +123,7 @@ class AddPet extends Component {
                         placeholder='Breed'
                         id='breed'
                         name='breed'
+                        value={this.state.breed}
                         onChange={this.handleChange}
                     />
                     <label>Medical:</label>
@@ -115,6 +132,7 @@ class AddPet extends Component {
                         placeholder='Fixed'
                         id='medical'
                         name='medical'
+                        value={this.state.medical}
                         onChange={this.handleChange}
                     />
                     <label>Bio:</label>
@@ -123,6 +141,7 @@ class AddPet extends Component {
                         placeholder='Biography'
                         id='biography'
                         name='biography'
+                        value={this.state.bio}
                         onChange={this.handleChange}
                     />
                     <label>Image:</label>
@@ -131,6 +150,7 @@ class AddPet extends Component {
                         placeholder='Image File'
                         id='image'
                         name='image'
+                        value={this.state.image}
                         onChange={this.handleChange}
                     />
                     <button>Submit</button>
@@ -140,4 +160,4 @@ class AddPet extends Component {
     }
 }
 
-export default AddPet;
+export default UpdatePet;

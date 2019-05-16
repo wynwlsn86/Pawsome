@@ -4,9 +4,8 @@ import LogInForm from '../LogInForm/LogInForm'
 class Login extends Component {
     render() {
         return (
-            <div>
-                <h1>LOG IN</h1>
-                <LogInForm 
+            <div className='Main'>
+                <LogInForm
                     authenticated={this.props.authenticated}
                     handleLogin={this.props.handleLogin}
                     username={this.props.username}
@@ -18,4 +17,4 @@ class Login extends Component {
     }
 }
 
-export default Login; 
+export default Login;

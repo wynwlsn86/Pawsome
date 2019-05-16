@@ -18,6 +18,9 @@ class LogInForm extends Component {
         }
         return (
             <div className="Wrapper">
+              <h1>LOG IN</h1>
+              <div className="Wrapper">
+
                 <form className="Volunteer-form" onSubmit={this.handleSubmitForm}>
                     <lable>Username:</lable>
                     <input
@@ -34,7 +37,8 @@ class LogInForm extends Component {
                         // value={this.props.password}
                     />
                     <button type='submit' onClick={this.handleSubmitForm}>LOG IN</button>
-                </form> 
+                </form>
+              </div>
             </div>
         );
     }
