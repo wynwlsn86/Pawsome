@@ -48,7 +48,7 @@ class AddPet extends Component {
         await Axios.post('http://localhost:5000/image/image-upload', formData, {
             headers: {
                 'Content-Type': 'image/jpeg'
-            }   
+            }
         })
         .then(response => {
             console.log(response);
@@ -90,6 +90,7 @@ class AddPet extends Component {
             return <Redirect to='/login' />
         }
         return (
+          <div className="Main">
             <div className="Wrapper">
               <h1>Add a New Pet</h1>
                 <form className="Volunteer-form" onSubmit={this.handleSubmit}>
@@ -168,6 +169,7 @@ class AddPet extends Component {
                     <button onClick={this.handleUpload}>UPLOAD FILE</button>
                     <button onClick={this.handleSubmit}>Submit</button>
                 </form>
+              </div>
             </div>
         );
     }

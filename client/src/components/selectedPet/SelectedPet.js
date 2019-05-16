@@ -34,7 +34,7 @@ class SelectedPet extends Component {
                     // authenticated={this.props.authenticated}
                     />} /> */}
                     <img
-                        src={noCatImage}
+                        src={this.props.selected.image}
                         alt='test' />
                         age, bio breed color
                     <ul>
@@ -53,7 +53,7 @@ class SelectedPet extends Component {
                 <div>
                     <h1>{this.props.selected.name}</h1>
                     <img
-                    src={noCatImage}
+                    src={this.props.selected.image}
                     alt='test' />
                 </div>
                     <ul>

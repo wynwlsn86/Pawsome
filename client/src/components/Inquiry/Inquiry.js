@@ -66,9 +66,9 @@ class Inquiry extends Component {
             return <Redirect to='/' />
         }
         return (
-                <div className="Wrapper">
+              <div className="Main">
                   <h1>Adoption Form</h1>
-                    <form className="Volunteer-form" onSubmit={this.handleSubmit}>
+                    <form className="Adoption-form" onSubmit={this.handleSubmit}>
                         <label> First Name: </label>
                         <input
                             type='input'
@@ -86,7 +86,7 @@ class Inquiry extends Component {
                             name='last'
                             value={this.state.last}
                             onChange={this.handleChange}
-                        />                        
+                        />
                         <label>DOB:</label>
                         <input
                             type='input'
@@ -96,6 +96,7 @@ class Inquiry extends Component {
                             value={this.state.dob}
                             onChange={this.handleChange}
                         />
+                        <div className="Wrapper">
                         <label>License:</label>
                         <input
                             type='input'
@@ -123,6 +124,7 @@ class Inquiry extends Component {
                             value={this.state.num_pets}
                             onChange={this.handleChange}
                         />
+                        </div>
                         <label>Number of Children:</label>
                         <input
                             type='input'
@@ -213,10 +215,12 @@ class Inquiry extends Component {
                             value={this.state.house_size}
                             onChange={this.handleChange}
                         />
-                        
+
+
                         <button onClick={this.handleSubmit}>Submit</button>
                     </form>
-                </div>
+                  </div>
+
             );
         }
     }
