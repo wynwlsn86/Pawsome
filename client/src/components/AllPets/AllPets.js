@@ -8,7 +8,7 @@ class AllPets extends Component {
     render() {
         return (
             <div className="Find-a-pet">
-                <SelectedPet 
+                <SelectedPet
                     className="Selected-pets"
                     selected={this.props.selected}
                     handleSelected={this.props.handleSelected}
