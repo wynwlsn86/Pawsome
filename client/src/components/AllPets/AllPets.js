@@ -27,7 +27,7 @@ class AllPets extends Component {
     render() {
         return (
             <div className="Find-a-pet">
-                <SelectedPet 
+                <SelectedPet
                     className="Selected-pets"
                     selected={this.state.selected}
                     isSelected={this.state.isSelected}
