@@ -25,7 +25,7 @@ class PetList extends Component {
                     <img
                     src={this.state.images[i]}
                     alt='test' />
-                    <button onClick={this.props.handleClick} value={pet.id}>Select</button>
+                    <button onClick={this.props.handleSelected} value={pet.id}>Select</button>
                 </div>
             )
         });

@@ -6,6 +6,8 @@ import Putzie from '../../assets/putzie.jpeg'
 import Rizzo from '../../assets/rizzo.jpeg'
 import Sammi from '../../assets/sami.jpeg'
 import noCatImage from '../../assets/noCatImage.jpeg';
+import { Link } from 'react-router-dom'
+
 
 class SelectedPet extends Component {
     constructor(props){
@@ -37,7 +39,12 @@ render() {
       <div className="Selected-pets">
           <h1>{this.props.selected.name}</h1>
           <button>Delete</button>
-          <button>Update</button>
+          <Link to='/update-pet'><button>Update</button></Link>
+          {/* <Route
+          path='/update-pet'
+          render={() => <UpdatePet
+          // authenticated={this.props.authenticated}
+          />} /> */}
           <img
               src={noCatImage}
               alt='test' />
