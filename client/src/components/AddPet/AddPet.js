@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { addPet } from '../../services/petsApi';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Axios from 'axios';
 
 class AddPet extends Component {
@@ -87,7 +87,10 @@ class AddPet extends Component {
     }
 
     render() {
-        if(!this.props.authenticated){
+        if(this.props.authenticated && this.state.createdPet){
+            return <Redirect to='/' />
+        }
+        else if(!this.props.authenticated){
             return <Redirect to='/login' />
         }
         return (

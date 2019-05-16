@@ -25,7 +25,6 @@ class Inquiry extends Component {
             house_size: null,
             animal_id: 10000,
             updatedAdopter: false
-
         }
     }
 
@@ -43,27 +42,32 @@ class Inquiry extends Component {
 
     handleSubmit = async(e) => {
         e.preventDefault();
-        let newAdopter = {
-            first: this.state.first,
-            last: this.state.last,
-            dob: this.state.dob,
-            license: this.state.license,
-            rent_own: this.state.rent_own,
-            num_pets: this.state.num_pets,
-            num_children: this.state.num_children,
-            allergies: this.state.allergies,
-            vet: this.state.vet,
-            phone: this.state.phone,
-            email: this.state.email,
-            address: this.state.address,
-            city: this.state.city,
-            state:this.state.state,
-            zip: this.state.zip,
-            house_size: this.state.house_size,
-            animal_id: this.state.animal_id
+        if(!this.state.first || this.state.last || this.state.dob || this.state.num_children || this.state.phone || this.state.address || this.state.city || this.state.state || this.state.zip){
+            alert('Please fill out all fields. All information is required');
         }
-        await addAdopter(newAdopter);
-        this.setState({updatedAdopter: true});
+        else{
+            let newAdopter = {
+                first: this.state.first,
+                last: this.state.last,
+                dob: this.state.dob,
+                license: this.state.license,
+                rent_own: this.state.rent_own,
+                num_pets: this.state.num_pets,
+                num_children: this.state.num_children,
+                allergies: this.state.allergies,
+                vet: this.state.vet,
+                phone: this.state.phone,
+                email: this.state.email,
+                address: this.state.address,
+                city: this.state.city,
+                state:this.state.state,
+                zip: this.state.zip,
+                house_size: this.state.house_size
+                animal_id: this.state.animal_id
+            }
+            await addAdopter(newAdopter);
+            this.setState({updatedAdopter: true});
+        }
     }
 
 
@@ -72,9 +76,11 @@ class Inquiry extends Component {
             return <Redirect to='/' />
         }
         return (
+
+            <div className="Main">
                 <div className="Wrapper">
                   <h1>Adoption Form</h1>
-                    <form className="Volunteer-form" onSubmit={this.handleSubmit}>
+                    <form className="Adoption-form" onSubmit={this.handleSubmit}>
                         <label> First Name: </label>
                         <input
                             type='input'
@@ -223,6 +229,7 @@ class Inquiry extends Component {
                         <button onClick={this.handleSubmit}>Submit</button>
                     </form>
                 </div>
+            </div>
             );
         }
     }
