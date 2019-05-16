@@ -24,10 +24,14 @@ class SelectedPet extends Component {
     render() {
         if(this.props.authenticated && this.props.isSelected){
             return(
+            <div>
+              <div className="Column">
+                <button onClick={this.props.onDelete}>Delete</button>
+                <Link to='/update-pet'><button>Update</button></Link>
+              </div>
                 <div className="Selected-pets">
                     <h1>{this.props.selected.name}</h1>
-                    <button onClick={this.props.onDelete}>Delete</button>
-                    <Link to='/update-pet'><button>Update</button></Link>
+
                     {/* <Route
                     path='/update-pet'
                     render={() => <UpdatePet
@@ -36,15 +40,15 @@ class SelectedPet extends Component {
                     <img
                         src={this.props.selected.image}
                         alt='test' />
-                        age, bio breed color
                     <ul>
                         <li>Age: {this.props.selected.age}</li>
                         <li>Bio: {this.props.selected.bio}</li>
                         <li>Breed: {this.props.selected.breed}</li>
                         <li>Color: {this.props.selected.color}</li>
-
                     </ul>
                 </div>
+              </div>
+
             )
         }
         else if(this.props.isSelected){
@@ -65,6 +69,7 @@ class SelectedPet extends Component {
                         <Link to='/adopt-form'><button> Inquiry </button></Link>
                     </ul>
                 </div>
+
             )
         }
 

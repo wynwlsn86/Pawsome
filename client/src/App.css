@@ -160,6 +160,11 @@ a {
   text-align: center;
 }
 
+.Column {
+  display: flex;
+  flex-direction: column;
+}
+
 .Wrapper label {
   justify-content: flex-start;
 }
@@ -220,7 +225,7 @@ a {
   justify-content: space-between;
   background-color: white;
   border: solid palevioletred;
-  margin: 0 50px 55px 50px;
+  margin: 0 15px 55px 15px;
 }
 
 
