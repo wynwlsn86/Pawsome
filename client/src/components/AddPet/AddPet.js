@@ -37,6 +37,7 @@ class AddPet extends Component {
             this.setState({
                 image
             })
+            console.log(this.state.image);
 
     }
 

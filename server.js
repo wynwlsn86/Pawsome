@@ -9,12 +9,11 @@ const { volRouter } = require('./routes/volunteersRoutes');
 const loggedInRoutes = require('./routes/loggedInRoutes');
 
 const { userRouter } = require('./routes/userRoutes');
-const { adopterRouter} = require('./routes/adopterRoutes');
+const { adopterRouter } = require('./routes/adopterRoutes');
 
 
 
 const { authorized } = require('./auth/auth');
-const { userRouter } = require('./routes/UserRoutes');
 const { awsRouter } = require('./routes/awsRoutes');
 
 const PORT = process.env.PORT || 5000
