@@ -76,11 +76,11 @@ const Pet = pawDb.define('pets', {
 //    })
 
    const Adopter = pawDb.define('adopters', {
-    first_name: {
+    first: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    last_name: {
+    last: {
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -92,15 +92,15 @@ const Pet = pawDb.define('pets', {
         type: Sequelize.STRING,
         allowNull: true
     },
-    rent_or_own:{
+    rent_own:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    other_pets:{
+    num_pets:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    children:{
+    num_children:{
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -136,7 +136,7 @@ const Pet = pawDb.define('pets', {
         type: Sequelize.INTEGER,
         allownull: false
     },
-    house_size_sqft: {
+    house_size: {
         type: Sequelize.STRING,
         allownull: false
     }

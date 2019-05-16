@@ -8,6 +8,7 @@ import { getAllPets } from '../../services/petsApi';
 import Login from '../Login/Login';
 import AllPets from '../AllPets/AllPets'
 import ContactUs from '../ContactUs/ContactUs'
+import Inquiry from '../Inquiry/Inquiry'
 import axios from 'axios'
 
 
@@ -86,6 +87,13 @@ class Main extends Component {
           selected={this.state.selected}
           isSelected={this.state.isSelected}
           />} />
+          <Route
+          path='/adopt-form'
+          render={() => <Inquiry
+          selected={this.state.selected}
+          isSelected={this.state.isSelected}
+          />} />
+
         <Route
           path='/login'
 
