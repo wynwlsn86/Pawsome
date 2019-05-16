@@ -42,6 +42,7 @@ class SelectedPet extends Component {
                         <li>Bio: {this.props.selected.bio}</li>
                         <li>Breed: {this.props.selected.breed}</li>
                         <li>Color: {this.props.selected.color}</li>
+
                     </ul>
                 </div>
             )
@@ -60,6 +61,7 @@ class SelectedPet extends Component {
                         <li>Breed: {this.props.selected.breed}</li>
                         <li>Color: {this.props.selected.color}</li>
                         <li>Bio: {this.props.selected.bio}</li>
+                        <Link to='/adopt-form'><button> Inquiry </button></Link>
                     </ul>
                       <Link to='/contact-us'><button>Adoption Inquiry</button></Link>
                 </div>

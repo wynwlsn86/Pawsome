@@ -8,6 +8,8 @@ import { getAllPets } from '../../services/petsApi';
 import Login from '../Login/Login';
 import AllPets from '../AllPets/AllPets'
 import ContactUs from '../ContactUs/ContactUs'
+import Inquiry from '../Inquiry/Inquiry'
+import axios from 'axios'
 
 
 class Main extends Component {
@@ -26,6 +28,13 @@ class Main extends Component {
    console.log(this.state.allPets)
     this.setState({allPets});
   }
+
+  handleDelete = async (e, id) => { 
+    console.log('delete clicked')
+    const deletedPet = this.state.selected.id
+    await axios.delete(`http://localhost:5000/pets/${deletedPet}`)
+    alert('pet has been deleted')
+}
 
   handleSelected = (e) => {
     e.preventDefault();
@@ -58,6 +67,7 @@ class Main extends Component {
           handleSelected={this.handleSelected}
           selected={this.state.selected}
           isSelected={this.state.isSelected}
+          onDelete={this.handleDelete}
         />} />
          <Route
            path='/volunteers'
@@ -77,6 +87,13 @@ class Main extends Component {
           selected={this.state.selected}
           isSelected={this.state.isSelected}
           />} />
+          <Route
+          path='/adopt-form'
+          render={() => <Inquiry
+          selected={this.state.selected}
+          isSelected={this.state.isSelected}
+          />} />
+
         <Route
           path='/login'
 

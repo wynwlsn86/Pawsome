@@ -23,13 +23,13 @@ const seedDb = async () => {
       phone: '911-311-ghostbusters'
     });
     const fakeAdopterInstance = await Adopter.create({
-      first_name: 'hey',
-      last_name: 'itsme',
+      first: 'hey',
+      last: 'itsme',
       dob:'12345',
       license: '1234556789',
-      rent_or_own: 'rent',
-      other_pets: 'yes',
-      children:'no',
+      rent_own: 'rent',
+      num_pets: 'yes',
+      num_children:'no',
       allergies:'nope',
       vet:'no sir',
       phone: '8452649299',
