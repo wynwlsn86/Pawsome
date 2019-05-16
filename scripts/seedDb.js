@@ -38,7 +38,8 @@ const seedDb = async () => {
       city:'nyc',
       state: 'ny',
       zip: 12345,
-      house_size_sqft: '1234'
+      house_size: '1234',
+      animal_id: 99
     })
 
   } catch (e) { 
