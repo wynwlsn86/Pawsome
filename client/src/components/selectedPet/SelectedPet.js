@@ -27,58 +27,61 @@ componentDidMount(){
 }
 
 handleDelete = () => {
-    
+
 }
 
+render() {
+  console.log(this.props.selected.id)
+  if(this.props.authenticated && this.props.isSelected){
+    return(
+      <div className="Selected-pets">
+          <h1>{this.props.selected.name}</h1>
+          <button>Delete</button>
+          <button>Update</button>
+          <img
+              src={noCatImage}
+              alt='test' />
+              age, bio breed color
+          <ul>
+              <li>Age: {this.props.selected.age}</li>
+              <li>Bio: {this.props.selected.bio}</li>
+              <li>Breed: {this.props.selected.breed}</li>
+              <li>Color: {this.props.selected.color}</li>
+          </ul>
+          </div>
+      )
+  }
+  else if(this.props.isSelected){
+    return(
+      <div className="Selected-pets">
+       <div>
+        <h1>{this.props.selected.name}</h1>
+        <img
+        src={noCatImage}
+        alt='test' />
+       </div>
+        <ul>
+            <li>Age: {this.props.selected.age}</li>
+            <li>Breed: {this.props.selected.breed}</li>
+            <li>Color: {this.props.selected.color}</li>
+            <li>Bio: {this.props.selected.bio}</li>
+        </ul>
+      </div>
+    )
+  }
+  return (
+    <div className="Center">
 
-    render() {
-        console.log(this.props.selected.id)
-        if(this.props.authenticated && this.props.isSelected){
-            return(
-                <div >
-                    <h1>{this.props.selected.name}</h1>
-                    <button>Delete</button>
-                    <button>Update</button>
-                    <img
-                        src={noCatImage}
-                        alt='test' />
-                        age, bio breed color
-                    <ul>
-                        <li>Age: {this.props.selected.age}</li>
-                        <li>Bio: {this.props.selected.bio}</li>
-                        <li>Breed: {this.props.selected.breed}</li>
-                        <li>Color: {this.props.selected.color}</li>
-                    </ul>
-                    </div>
-            )
-        }
-        else if(this.props.isSelected){
-            return(
-                <div >
-                    <h1>{this.props.selected.name}</h1>
-                    <img
-                    src={noCatImage}
-                    alt='test' />
-                    <ul>
-                        <li>Age: {this.props.selected.age}</li>
-                        <li>Bio: {this.props.selected.bio}</li>
-                        <li>Breed: {this.props.selected.breed}</li>
-                        <li>Color: {this.props.selected.color}</li>
-                    </ul>
-                </div>
-            )
-        }
-        return (
-            <div>
-                <div>
-                    <h1>SELECT A PET</h1>
-                    <img src={noCatImage} alt='' />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-        );
-    }
+        <div className="Selected-pets">
+          <h1>SELECT A PET</h1>
+          <img src={noCatImage} alt='' />
+
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </div>
+  );
+  }
 }
 
 export default SelectedPet;

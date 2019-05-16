@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => (
   <div className="Footer">
     <p>
-      "random feel-good quote about adopting pets"
+      "We rescue animals not to change the world; we rescue them to change their worlds."
     </p>
     <ul>
       <li>Facebook</li>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { addPet } from '../../services/petsApi';
-import { Redirect } from 'react-router-dom'; 
+import { Redirect } from 'react-router-dom';
 
 class AddPet extends Component {
     constructor () {
@@ -58,8 +58,9 @@ class AddPet extends Component {
             return <Redirect to='/login' />
         }
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div className="Wrapper">
+              <h1>Add a New Pet</h1>
+                <form className="Volunteer-form" onSubmit={this.handleSubmit}>
                     <label>Name:</label>
                     <input
                         type='input'

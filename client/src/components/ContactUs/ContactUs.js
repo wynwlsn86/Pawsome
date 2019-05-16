@@ -66,6 +66,7 @@ class NewContactForm extends Component {
   render() {
     return (
     <div className="Wrapper">
+      <h1>Contact Us</h1>
       <div className='Volunteers'>
         <img className="Form-photo-fill" src={biggie} alt='' />
 

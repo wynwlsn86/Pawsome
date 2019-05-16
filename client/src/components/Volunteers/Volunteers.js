@@ -66,6 +66,7 @@ class NewVolunteerForm extends Component {
   render() {
     return (
     <div className="Wrapper">
+      <h1>Volunteer Application</h1>
       <div className='Volunteers'>
         <img className="Form-photo-fill" src={ollyrhae} alt='' />
 
