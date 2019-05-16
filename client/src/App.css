@@ -76,9 +76,22 @@ a {
   background-color: white;
   border: solid palevioletred;
   display: flex;
-  max-height: 521px;
-  padding: 10px 200px 10px 200px;
-  margin: 0 10px 0 10px;
+  max-height: 921px;
+  padding: 10px 200px 100px 200px;
+  margin: 0 10px 55px 10px;
+}
+
+.Main img {
+  margin: 10px;
+  width: 50%;
+  height: 50%;
+  min-width: 332px;
+  min-height: 478px;
+  border: solid #4E4351;
+}
+
+.Volunteers .Main {
+  padding: 100px 0 200px 0;
 }
 
 .About {
@@ -88,12 +101,7 @@ a {
   max-height: inherit;
 }
 
-.Main img {
-  margin: 10px;
-  width: 50%;
-  min-width: 332px;
-  border: solid #4E4351;
-}
+
 
 .Footer {
   background-color: palevioletred;
@@ -121,9 +129,15 @@ a {
 
 .Volunteers {
   display: flex;
+  max-height: 700px;
+  background-color: white;
 }
 
 .Wrapper {
+  padding-bottom: 50px;
+}
+
+.Wrapper Main h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -147,7 +161,7 @@ a {
 }
 .Volunteer-form {
   padding: 25px;
-  margin: 0 0 0 0;
+  margin: 0 0 0px 0;
   width: 400px;
   border: 2px lightgray solid;
   background-color: palevioletred;

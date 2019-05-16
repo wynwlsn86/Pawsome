@@ -6,7 +6,7 @@ import ollyrhae from '../../assets/ollyrhae.jpg'
 
 function Home() {
   return (
-    <div className="App">
+    <div>
     <div>
       <div class="Main">
          <img src={ollyrhae} alt="pet photos" ALIGN="left"/>
