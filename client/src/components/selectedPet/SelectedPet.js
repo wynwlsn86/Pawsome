@@ -7,7 +7,8 @@ import Rizzo from '../../assets/rizzo.jpeg'
 import Sammi from '../../assets/sami.jpeg'
 import noCatImage from '../../assets/noCatImage.jpeg';
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
+
 
 class SelectedPet extends Component {
     constructor(props){
@@ -21,7 +22,6 @@ class SelectedPet extends Component {
     }
 
     render() {
-        console.log(this.props.selected.id)
         if(this.props.authenticated && this.props.isSelected){
             return(
                 <div className="Selected-pets">
@@ -61,20 +61,20 @@ class SelectedPet extends Component {
                         <li>Color: {this.props.selected.color}</li>
                         <li>Bio: {this.props.selected.bio}</li>
                     </ul>
+                      <Link to='/contact-us'><button>Adoption Inquiry</button></Link>
                 </div>
             )
         }
-    
-        return (
-            <div className="Center">
 
+        return (
+            <div className="Wrapper">
                 <div className="Selected-pets">
                 <h1>SELECT A PET</h1>
                 <img src={noCatImage} alt='' />
-
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p>Scroll through the adoptable pets and click select to learn more about these rescued animals and inquire about adoption.
                 </p>
+                </div>
+
             </div>
         );
     }
