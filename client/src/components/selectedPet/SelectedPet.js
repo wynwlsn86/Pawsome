@@ -29,9 +29,6 @@ class SelectedPet extends Component {
                      <Link to='/'>Delete</Link></button>
                      <button><Link to='/update-pet'>Update</Link></button>
                  </div>
-
-
-
                 <div className="Selected-pets">
                     <h1>{this.props.selected.name}</h1>
                     {/* <div className='button-fix-parent'>
@@ -46,13 +43,10 @@ class SelectedPet extends Component {
                         <li>Bio: {this.props.selected.bio}</li>
                         <li>Breed: {this.props.selected.breed}</li>
                         <li>Color: {this.props.selected.color}</li>
-
                     </ul>
                 </div>
-            
-            
-            
             </div>
+
             )
         }
         else if(this.props.isSelected){
@@ -73,6 +67,7 @@ class SelectedPet extends Component {
                         <Link to='/adopt-form'><button> Inquiry </button></Link>
                     </ul>
                 </div>
+
             )
         }
 

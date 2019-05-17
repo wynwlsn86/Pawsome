@@ -77,8 +77,7 @@ class Inquiry extends Component {
             return <Redirect to='/' />
         }
         return (
-
-            <div className="Main">
+              <div className="Main">
                   <h1>Adoption Form</h1>
                     <form className="Adoption-form" onSubmit={this.handleSubmit}>
                         <label> First Name: </label>
@@ -98,7 +97,7 @@ class Inquiry extends Component {
                             name='last'
                             value={this.state.last}
                             onChange={this.handleChange}
-                        />                        
+                        />
                         <label>DOB:</label>
                         <input
                             type='input'
@@ -225,9 +224,11 @@ class Inquiry extends Component {
                             value={this.state.house_size}
                             onChange={this.handleChange}
                         />
-                        
+
+
                         <button onClick={this.handleSubmit}>Submit</button>
                     </form>
+
             </div>
             );
         }
