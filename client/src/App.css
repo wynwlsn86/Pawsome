@@ -80,7 +80,18 @@ a {
   padding: 10px 200px 100px 200px;
   margin: 0 10px 55px 10px;
 }
-
+.Main-add {
+  background-color: white;
+  border: solid palevioletred;
+  display: flex;
+  max-height: 921px;
+  padding: 10px 200px 100px 200px;
+  margin: 0 10px 55px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 .Main img {
   margin: 10px;
   width: 50%;
@@ -174,7 +185,7 @@ a {
 .Volunteer-form {
   padding: 25px;
   margin: 0 0 0px 0;
-  width: 800px;
+  width: 400px;
   border: 2px lightgray solid;
   background-color: palevioletred;
   align-self: center;
@@ -258,11 +269,15 @@ a {
 
 .Selected-pets {
   display: flex;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  margin-right: 50px;
   max-width: 300px;
-  overflow-y: hidden;
-  height: 100vh;
+  height: 120vh;
   flex-direction: column;
+}
+
+.Selected-pets h1{
+  text-align: center;
 }
 
 .Selected-pets img {
@@ -288,7 +303,7 @@ a {
 }
 
 .Pet-list {
-  margin: 0 50px 0 50px;
+  margin: 50px 50px 0 50px;
   flex-direction: column;
   justify-content: flex-end;
   background-color: lightpink;
@@ -325,3 +340,65 @@ a {
 .Select-click ul {
   margin-top: 250px;
 }
+
+
+.button-fix{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+ 
+ .button-fix button {
+  width: 250px;
+  justify-content: center;
+  margin: 10px;
+  padding: 0px;
+  margin-left: 20%;
+  background-color: lightgray;
+  font-style: normal;
+  font-size: 14pt;
+  color: palevioletred;
+  cursor: pointer;
+  justify-content: center;
+  background-color: lightgray;
+  font-style: normal;
+  color: palevioletred;
+  cursor: pointer;
+ }
+ 
+ .button-fix a {
+  text-decoration: none;
+  color: palevioletred;
+ }
+
+
+
+
+/* 
+.button-fix-parent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+ } */
+ 
+ /* .button-fix button {
+  width: 150px;
+  justify-content: center;
+  margin: 50px;
+  padding: 10px;
+  margin-left: 20%;
+  background-color: lightgray;
+  font-style: normal;
+  font-size: 14pt;
+  color: palevioletred;
+  cursor: pointer;
+  justify-content: center;
+ }
+ 
+ .button-fix a {
+  widht: 100px;
+  text-decoration: none;
+  color: palevioletred;
+ } */
+

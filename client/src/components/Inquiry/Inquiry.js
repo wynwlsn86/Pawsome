@@ -79,7 +79,6 @@ class Inquiry extends Component {
         return (
 
             <div className="Main">
-                <div className="Wrapper">
                   <h1>Adoption Form</h1>
                     <form className="Adoption-form" onSubmit={this.handleSubmit}>
                         <label> First Name: </label>
@@ -229,7 +228,6 @@ class Inquiry extends Component {
                         
                         <button onClick={this.handleSubmit}>Submit</button>
                     </form>
-                </div>
             </div>
             );
         }

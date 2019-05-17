@@ -23,12 +23,23 @@ class SelectedPet extends Component {
     render() {
         if(this.props.authenticated && this.props.isSelected){
             return(
+                <div>
+                <div className='button-fix'>
+                     <button onClick={this.props.onDelete}>
+                     <Link to='/'>Delete</Link></button>
+                     <button><Link to='/update-pet'>Update</Link></button>
+                 </div>
+
+
+
                 <div className="Selected-pets">
                     <h1>{this.props.selected.name}</h1>
-                    <button onClick={this.props.onDelete}>Delete</button>
-                    <Link to='/update-pet'><button>Update</button></Link>
+                    {/* <div className='button-fix-parent'>
+                        <button className='button-fix' onClick={this.props.onDelete}><Link to='/'>Delete</Link></button>
+                        <button className='button-fix'><Link to='/update-pet'>Update</Link></button>
+                    </div> */}
                     <img
-                        src={noCatImage}
+                        src={this.props.selected.image}
                         alt='test' />
                     <ul>
                         <li>Age: {this.props.selected.age}</li>
@@ -38,6 +49,10 @@ class SelectedPet extends Component {
 
                     </ul>
                 </div>
+            
+            
+            
+            </div>
             )
         }
         else if(this.props.isSelected){
@@ -46,7 +61,7 @@ class SelectedPet extends Component {
                 <div>
                     <h1>{this.props.selected.name}</h1>
                     <img
-                    src={noCatImage}
+                    src={this.props.selected.image}
                     alt='test' />
                 </div>
                     <ul>
@@ -71,6 +86,8 @@ class SelectedPet extends Component {
                 </div>
 
             </div>
+
+            
         );
     }
 }

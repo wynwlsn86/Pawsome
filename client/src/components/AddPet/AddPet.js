@@ -95,7 +95,7 @@ class AddPet extends Component {
             return <Redirect to='/login' />
         }
         return (
-            <div className="Wrapper">
+            <div className="Main-add">
               <h1>Add a New Pet</h1>
                 <form className="Volunteer-form" onSubmit={this.handleSubmit}>
                     <label>Name:</label>
