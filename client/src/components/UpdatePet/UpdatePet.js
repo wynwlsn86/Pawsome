@@ -65,6 +65,7 @@ class UpdatePet extends Component {
             return <Redirect to='/' />
         }
         return (
+          <div className="Main">
             <div className="Wrapper">
               <h1>Update Pet</h1>
                 <form className="Volunteer-form" onSubmit={this.handleSubmit}>
@@ -152,6 +153,7 @@ class UpdatePet extends Component {
                     <button>Submit</button>
                 </form>
             </div>
+          </div>
         );
     }
 }

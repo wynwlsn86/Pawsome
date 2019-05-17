@@ -77,9 +77,11 @@ class Inquiry extends Component {
             return <Redirect to='/' />
         }
         return (
+<<<<<<< HEAD
+=======
 
-            <div className="Main">
-                <div className="Wrapper">
+>>>>>>> 10fa237f94ed131c1348a31667f29801d56831f9
+              <div className="Main">
                   <h1>Adoption Form</h1>
                     <form className="Adoption-form" onSubmit={this.handleSubmit}>
                         <label> First Name: </label>
@@ -99,7 +101,7 @@ class Inquiry extends Component {
                             name='last'
                             value={this.state.last}
                             onChange={this.handleChange}
-                        />                        
+                        />
                         <label>DOB:</label>
                         <input
                             type='input'
@@ -109,6 +111,7 @@ class Inquiry extends Component {
                             value={this.state.dob}
                             onChange={this.handleChange}
                         />
+                        <div className="Wrapper">
                         <label>License:</label>
                         <input
                             type='input'
@@ -136,6 +139,7 @@ class Inquiry extends Component {
                             value={this.state.num_pets}
                             onChange={this.handleChange}
                         />
+                        </div>
                         <label>Number of Children:</label>
                         <input
                             type='input'
@@ -226,11 +230,22 @@ class Inquiry extends Component {
                             value={this.state.house_size}
                             onChange={this.handleChange}
                         />
-                        
+
+
                         <button onClick={this.handleSubmit}>Submit</button>
                     </form>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  </div>
+
+=======
                 </div>
             </div>
+>>>>>>> 5999e338f65b1a6dba338cd4c80b3ae1bf1fc412
+=======
+                  </div>
+
+>>>>>>> 10fa237f94ed131c1348a31667f29801d56831f9
             );
         }
     }

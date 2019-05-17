@@ -90,9 +90,7 @@ a {
   border: solid #4E4351;
 }
 
-.Volunteers .Main {
-  padding: 100px 0 200px 0;
-}
+
 
 .About {
   min-width: 373px;
@@ -143,15 +141,28 @@ a {
   background-color: white;
 }
 
+
 .Wrapper {
   padding-bottom: 50px;
 }
 
-.Wrapper Main h1 {
+.Wrapper .Main h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+.Volunteer-form .Wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.Column {
+  display: flex;
+  flex-direction: column;
 }
 
 .Wrapper label {
@@ -250,17 +261,48 @@ a {
 .Find-a-pet {
   display: flex;
   flex-direction:row;
-  justify-content: center;
+  justify-content: space-between;
   background-color: white;
   border: solid palevioletred;
+  margin: 0 15px 55px 15px;
+}
+/* ***************Fixing buttons */
+
+.button-fix{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.button-fix button {
+  width: 250px;
+  justify-content: center;
+  margin: 10px;
+  padding: 15px;
+  margin-left: 20%;
+  background-color: lightgray;
+  font-style: normal;
+  font-size: 14pt;
+  color: palevioletred;
+  cursor: pointer;
+  justify-content: center;
+  background-color: lightgray;
+  font-style: normal;
+  color: palevioletred;
+  cursor: pointer;
+}
+
+.button-fix a {
+  text-decoration: none;
+  color: palevioletred;
+}
+
+/* ************************************* */
 
 .Selected-pets {
   display: flex;
   margin-left: 20px;
-  max-width: 300px;
-  overflow-y: hidden;
+  max-width: 500px;
   height: 100vh;
   flex-direction: column;
 }
@@ -276,11 +318,7 @@ a {
   list-style: none;
   text-decoration: none;
   font-size: 12pt;
-}
-
-.Selected-pets button {
-  background-color: pink;
-  border: solid palevioletred;
+  text-align: right;
 }
 
 .List-item {
