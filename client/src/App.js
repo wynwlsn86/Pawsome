@@ -19,7 +19,6 @@ class App extends Component {
   async handleLogin() {
     try {
         const { username, password} = this.state;
-        console.log(username, password);
         const response = await login({username, password});
         console.log(response);
         this.setState({
@@ -33,8 +32,6 @@ class App extends Component {
   handleChange = (e) => {
     const key = e.target.name;
     const value = e.target.value;
-    console.log(key)
-    console.log(value)
     this.setState(prevState => {
         return {[key]: value}});
   }
