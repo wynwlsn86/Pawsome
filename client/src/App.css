@@ -227,7 +227,39 @@ a {
   border: solid palevioletred;
   margin: 0 15px 55px 15px;
 }
+/* ***************Fixing buttons */
 
+.button-fix{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button-fix button {
+  width: 250px;
+  justify-content: center;
+  margin: 10px;
+  padding: 15px;
+  margin-left: 20%;
+  background-color: lightgray;
+  font-style: normal;
+  font-size: 14pt;
+  color: palevioletred;
+  cursor: pointer;
+  justify-content: center;
+  background-color: lightgray;
+  font-style: normal;
+  color: palevioletred;
+  cursor: pointer;
+}
+
+.button-fix a {
+  text-decoration: none;
+  color: palevioletred;
+}
+
+
+/* ************************************* */
 
 .Selected-pets {
   display: flex;
@@ -249,11 +281,6 @@ a {
   text-decoration: none;
   font-size: 12pt;
   text-align: right;
-}
-
-.Selected-pets button {
-  background-color: pink;
-  border: solid palevioletred;
 }
 
 .List-item {

@@ -25,9 +25,9 @@ class SelectedPet extends Component {
         if(this.props.authenticated && this.props.isSelected){
             return(
             <div>
-              <div className="Column">
+              <div className='button-fix'>
                 <button onClick={this.props.onDelete}>Delete</button>
-                <Link to='/update-pet'><button>Update</button></Link>
+                <button><Link to='/update-pet'>Update</Link></button>
               </div>
                 <div className="Selected-pets">
                     <h1>{this.props.selected.name}</h1>
