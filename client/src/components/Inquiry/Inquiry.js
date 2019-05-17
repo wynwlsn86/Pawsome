@@ -33,7 +33,6 @@ class Inquiry extends Component {
         const leId = this.props.selected.id
         const name = element.name;
         const value = element.value;
-        console.log(name, value)
         this.setState({
             animal_id: leId,
             [name]: value

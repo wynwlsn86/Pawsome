@@ -19,6 +19,7 @@ adopterRouter.get('/', async (req, res) => {
 
 // post new adopter
 adopterRouter.post('/', async (req, res) => {
+
   try {
     const postedAdopter = await Adopter.create(req.body);
     const petId = parseInt(req.body.animal_id)

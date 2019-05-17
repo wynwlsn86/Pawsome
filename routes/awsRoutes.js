@@ -9,7 +9,6 @@ awsRouter.post('/image-upload', (req, res) => {
     if (err) {
       return res.status(422).send({errors: [{title: 'Image Upload Error', detail: err.message}] });
     }
-
     return res.json({'imageUrl': req.file.location});
   });
 })
