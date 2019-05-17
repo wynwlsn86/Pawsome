@@ -8,7 +8,6 @@ class LogInForm extends Component {
 
     handleSubmitForm = (event) => {
         event.preventDefault();
-        console.log('submitted');
         this.props.handleLogin();
       }
 

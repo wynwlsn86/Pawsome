@@ -12,11 +12,7 @@ const api = axios.create({
 
 export const login = async(data) => {
     try{
-        console.log(data);
       const resp = await api.post('/auth/login', data);
-      
-      console.log(resp)
-
       const {data: { token, user } } = resp;
       localStorage.setItem('token', token);
       return user;
