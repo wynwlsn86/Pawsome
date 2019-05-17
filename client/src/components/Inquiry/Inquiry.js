@@ -33,7 +33,6 @@ class Inquiry extends Component {
         const leId = this.props.selected.id
         const name = element.name;
         const value = element.value;
-        console.log(name, value)
         this.setState({
             [name]: value,
             animal_id: leId
@@ -62,7 +61,7 @@ class Inquiry extends Component {
                 city: this.state.city,
                 state:this.state.state,
                 zip: this.state.zip,
-                house_size: this.state.house_size
+                house_size: this.state.house_size,
                 animal_id: this.state.animal_id
             }
             await addAdopter(newAdopter);

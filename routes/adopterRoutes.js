@@ -18,8 +18,10 @@ adopterRouter.get('/', async (req, res) => {
 
 // post new adopter
 adopterRouter.post('/', async (req, res) => {
+
   try {
     const postedAdopter = await Adopter.create(req.body);
+    console.log(req.body);
     res.send(postedAdopter);
   } catch (e) {
     console.log(e.message);

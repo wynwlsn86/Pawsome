@@ -33,11 +33,9 @@ class AddPet extends Component {
         e.preventDefault();
             // let reader = new FileReader();
             let image = e.target.files[0];
-            console.log(e.target.files[0]);
             this.setState({
                 image
             })
-            console.log(this.state.image);
 
     }
 
@@ -52,29 +50,33 @@ class AddPet extends Component {
             }   
         })
         .then(response => {
-            console.log(response);
             const image = response.data.imageUrl;
             this.setState({image})
+            alert('Image Uploaded')
         })
         .catch(error => console.log(error.message))
     }
 
     handleSubmit = async(e) => {
         e.preventDefault();
-        console.log('submitted');
-        let newPet = {
-            name: this.state.name,
-            age: this.state.age,
-            species: this.state.species,
-            color: this.state.color,
-            gender: this.state.gender,
-            breed: this.state.breed,
-            medical: this.state.breed,
-            bio: this.state.bio,
-            image: this.state.image
+        if(!this.state.name || !this.state.species || !this.state.gender || !this.state.age){
+            alert('Name, Species, Age, and Gender are required fileds')
         }
-        await addPet(newPet);
-        this.setState({createdPet: true});
+        else {
+            let newPet = {
+                name: this.state.name,
+                age: this.state.age,
+                species: this.state.species,
+                color: this.state.color,
+                gender: this.state.gender,
+                breed: this.state.breed,
+                medical: this.state.breed,
+                bio: this.state.bio,
+                image: this.state.image
+            }
+            await addPet(newPet);
+            this.setState({createdPet: true});
+        }
     }
 
 
@@ -82,7 +84,6 @@ class AddPet extends Component {
         const el = e.target;
         const name = el.name;
         const value = el.value;
-        console.log(name, value)
         this.setState({[name]: value});
     }
 

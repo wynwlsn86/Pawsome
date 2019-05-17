@@ -12,21 +12,16 @@ authRouter.post('/login', async (req,res, next) => {
         const error = new Error('An Error Occurred')
         return next(error);
       }
-
       req.login(user, { session : false }, async (error) => {
         if ( error ) return next(error)
-
         const { email, id } = user
         const payload = { email, id }
-
         const token = jwtSign(payload)
         // return the user object and token
         return res.json({ user, token })
       })
-
     } catch(error) {
       return next(error)
-
     }
   })(req, res, next)
 });
