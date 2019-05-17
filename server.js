@@ -7,17 +7,12 @@ const { petRouter } = require('./routes/petsRoutes');
 const authRouter = require('./routes/authRoutes');
 const { volRouter } = require('./routes/volunteersRoutes');
 const loggedInRoutes = require('./routes/loggedInRoutes');
-
 const { userRouter } = require('./routes/userRoutes');
-const { adopterRouter} = require('./routes/adopterRoutes');
-
-
-
+const { adopterRouter } = require('./routes/adopterRoutes');
 const { authorized } = require('./auth/auth');
 const { awsRouter } = require('./routes/awsRoutes');
 
 const PORT = process.env.PORT || 5000
-
 const app = express()
 
 app.use(logger('dev'))

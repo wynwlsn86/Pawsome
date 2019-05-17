@@ -24,13 +24,11 @@ class Main extends Component {
 
   fetchAllPets = async () => {
    const allPets =  await getAllPets();
-   console.log('fetch all pets complete');
    console.log(this.state.allPets)
     this.setState({allPets});
   }
 
   handleDelete = async (e, id) => {
-    console.log('delete clicked')
     const deletedPet = this.state.selected.id
     await axios.delete(`http://localhost:5000/pets/${deletedPet}`)
     alert('pet has been deleted')
@@ -39,11 +37,7 @@ class Main extends Component {
   handleSelected = (e) => {
     e.preventDefault();
     const selected = this.state.allPets[e.target.id];
-    console.log(selected);
-    console.log(e.target.id, 'value')
-    console.log(this.state.allPets)
     this.setState({selected});
-    console.log(this.state)
     this.setState({isSelected: true})
 
 }
@@ -58,7 +52,11 @@ class Main extends Component {
       <div>
         <Route
           exact path='/'
-          render={() => <Home />} />
+          render={() => <Home 
+            fetchAllPets={this.fetchAllPets}
+            />} 
+          
+          />
         <Route
           path='/find-a-pet'
           render={() => <AllPets

@@ -6,7 +6,6 @@ import Putzie from '../../assets/putzie.jpeg'
 import Rizzo from '../../assets/rizzo.jpeg'
 import Sammi from '../../assets/sami.jpeg'
 import noCatImage from '../../assets/noCatImage.jpeg';
-import axios from 'axios'
 import { Link, Redirect } from 'react-router-dom'
 
 
@@ -31,12 +30,8 @@ class SelectedPet extends Component {
               </div>
                 <div className="Selected-pets">
                     <h1>{this.props.selected.name}</h1>
-
-                    {/* <Route
-                    path='/update-pet'
-                    render={() => <UpdatePet
-                    // authenticated={this.props.authenticated}
-                    />} /> */}
+                    <button onClick={this.props.onDelete}>Delete</button>
+                    <Link to='/update-pet'><button>Update</button></Link>
                     <img
                         src={this.props.selected.image}
                         alt='test' />

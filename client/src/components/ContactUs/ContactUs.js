@@ -40,14 +40,9 @@ class NewContactForm extends Component {
 
   handleTextInput(event) {
     const fieldName = event.target.name
-    console.log(fieldName);
     //write in the field to view the changes in console, and display the name of the input
     const value = event.target.value
-    console.log( `${fieldName}, ${value}`)
-
     this.setState(state => {
-      // console.log(event)
-
       return { [fieldName]: value }
     })
   }

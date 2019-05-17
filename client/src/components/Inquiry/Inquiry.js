@@ -4,8 +4,8 @@ import {Redirect} from 'react-router-dom';
 import { addAdopter } from '../../services/adoptersApi';
 
 class Inquiry extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state ={
             first: null,
             last: null,
@@ -23,41 +23,52 @@ class Inquiry extends Component {
             state: null,
             zip: null,
             house_size: null,
+            animal_id: 10000,
             updatedAdopter: false
-
         }
     }
 
     handleChange = (e) => {
         const element = e.target;
+        const leId = this.props.selected.id
         const name = element.name;
         const value = element.value;
-        console.log(name, value)
-        this.setState({[name]: value});
+        this.setState({
+            animal_id: leId,
+            [name]: value
+        });
     }
 
     handleSubmit = async(e) => {
         e.preventDefault();
-        let newAdopter = {
-            first: this.state.first,
-            last: this.state.last,
-            dob: this.state.dob,
-            license: this.state.license,
-            rent_own: this.state.rent_own,
-            num_pets: this.state.num_pets,
-            num_children: this.state.num_children,
-            allergies: this.state.allergies,
-            vet: this.state.vet,
-            phone: this.state.phone,
-            email: this.state.email,
-            address: this.state.address,
-            city: this.state.city,
-            state:this.state.state,
-            zip: this.state.zip,
-            house_size: this.state.house_size
+        if(!this.state.first || !this.state.last || !this.state.dob || !this.state.num_children || !this.state.phone || !this.state.address || !this.state.city || !this.state.state || !this.state.zip){
+            console.log(this.state)
+            alert('Please fill out all fields. All information is required');
         }
-        await addAdopter(newAdopter);
-        this.setState({updatedAdopter: true});
+        else{
+            let newAdopter = {
+                first: this.state.first,
+                last: this.state.last,
+                dob: this.state.dob,
+                license: this.state.license,
+                rent_own: this.state.rent_own,
+                num_pets: this.state.num_pets,
+                num_children: this.state.num_children,
+                allergies: this.state.allergies,
+                vet: this.state.vet,
+                phone: this.state.phone,
+                email: this.state.email,
+                address: this.state.address,
+                city: this.state.city,
+                state:this.state.state,
+                zip: this.state.zip,
+                house_size: this.state.house_size,
+                animal_id: this.state.animal_id
+            }
+            await addAdopter(newAdopter);
+            this.setState({updatedAdopter: true});
+            alert('Application Successfully Sent');
+        }
     }
 
 
@@ -219,8 +230,13 @@ class Inquiry extends Component {
 
                         <button onClick={this.handleSubmit}>Submit</button>
                     </form>
+<<<<<<< HEAD
                   </div>
 
+=======
+                </div>
+            </div>
+>>>>>>> 5999e338f65b1a6dba338cd4c80b3ae1bf1fc412
             );
         }
     }

@@ -134,11 +134,15 @@ const Pet = pawDb.define('pets', {
     },
     zip: {
         type: Sequelize.INTEGER,
-        allownull: false
+        allowNull: false
     },
     house_size: {
         type: Sequelize.STRING,
-        allownull: false
+        allowNull: false
+    },
+    animal_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
     }
 })
 
@@ -181,10 +185,10 @@ Pet.belongsToMany(Volunteer, {
 Volunteer.belongsTo(Pet);
 
 
+
 Adopter.belongsToMany(Pet, {
-    through: 'adopters_to_pets_xref',
-    foreignKey: 'adopter_id'})
-Pet.belongsTo(Adopter);
+    through: 'adopt_to_pets_xref',
+    foreignKey: 'adopt_id'});
 
 
 AuthUser.beforeCreate(async (user,options) => {
