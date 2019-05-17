@@ -8,7 +8,8 @@
     "db:init": "dropdb --if-exists pawDb && createdb pawDb",
     "db:reset": "node ./scripts/resetDb.js",
     "db:seed": "node ./scripts/seedDb.js",
-    "db:create": "createdb pawDb"
+    "db:create": "createdb pawDb",
+    "Heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt')
 
-const pawDb = new Sequelize({
+const pawDb = new Sequelize(process.env.DATABSE_URL || 'postgres://localhost:5432/pawDb', {
   database: 'pawDb',
   dialect: 'postgres'
 })
