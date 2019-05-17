@@ -77,6 +77,10 @@ class Inquiry extends Component {
             return <Redirect to='/' />
         }
         return (
+<<<<<<< HEAD
+=======
+
+>>>>>>> 10fa237f94ed131c1348a31667f29801d56831f9
               <div className="Main">
                   <h1>Adoption Form</h1>
                     <form className="Adoption-form" onSubmit={this.handleSubmit}>
@@ -231,12 +235,17 @@ class Inquiry extends Component {
                         <button onClick={this.handleSubmit}>Submit</button>
                     </form>
 <<<<<<< HEAD
+<<<<<<< HEAD
                   </div>
 
 =======
                 </div>
             </div>
 >>>>>>> 5999e338f65b1a6dba338cd4c80b3ae1bf1fc412
+=======
+                  </div>
+
+>>>>>>> 10fa237f94ed131c1348a31667f29801d56831f9
             );
         }
     }
