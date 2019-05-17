@@ -14,7 +14,6 @@ const { adopterRouter} = require('./routes/adopterRoutes');
 
 
 const { authorized } = require('./auth/auth');
-const { userRouter } = require('./routes/UserRoutes');
 const { awsRouter } = require('./routes/awsRoutes');
 
 const PORT = process.env.PORT || 5000
@@ -45,5 +44,5 @@ app.get('/', async (req, res) => {
       res.send(e)
     }
   })
-  
+
   app.listen(PORT, () => console.log(`running on port ${PORT}`))
