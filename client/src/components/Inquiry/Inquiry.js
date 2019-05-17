@@ -34,14 +34,15 @@ class Inquiry extends Component {
         const name = element.name;
         const value = element.value;
         this.setState({
-            [name]: value,
-            animal_id: leId
+            animal_id: leId,
+            [name]: value
         });
     }
 
     handleSubmit = async(e) => {
         e.preventDefault();
-        if(!this.state.first || this.state.last || this.state.dob || this.state.num_children || this.state.phone || this.state.address || this.state.city || this.state.state || this.state.zip){
+        if(!this.state.first || !this.state.last || !this.state.dob || !this.state.num_children || !this.state.phone || !this.state.address || !this.state.city || !this.state.state || !this.state.zip){
+            console.log(this.state)
             alert('Please fill out all fields. All information is required');
         }
         else{
@@ -66,6 +67,7 @@ class Inquiry extends Component {
             }
             await addAdopter(newAdopter);
             this.setState({updatedAdopter: true});
+            alert('Application Successfully Sent');
         }
     }
 

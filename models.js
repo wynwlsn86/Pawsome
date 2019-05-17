@@ -186,7 +186,9 @@ Volunteer.belongsTo(Pet);
 
 
 
-Adopter.belongsTo(Pet)
+Adopter.belongsToMany(Pet, {
+    through: 'adopt_to_pets_xref',
+    foreignKey: 'adopt_id'});
 
 
 AuthUser.beforeCreate(async (user,options) => {
