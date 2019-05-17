@@ -35,7 +35,6 @@ class UpdatePet extends Component {
         const element = e.target;
         const name = element.name;
         const value = element.value;
-        console.log(name, value)
         this.setState({[name]: value});
     }
 
@@ -53,9 +52,6 @@ class UpdatePet extends Component {
             image: this.state.image
         }
         let id = Number(this.props.selected.id)
-        console.log(this.props.selected.id, 'pre parse');
-        console.log(id);
-        console.log(typeof id);
         await putPet(id, newPet);
         this.setState({updatedPet: true});
 

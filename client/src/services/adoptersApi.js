@@ -10,7 +10,6 @@ const api = axios.create({
 export const addAdopter = async (data) => {
     try{
         const resp = await api.post('/', data);
-        console.log(resp.data);
         return resp
     }
     catch(e){

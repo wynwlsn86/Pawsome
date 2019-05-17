@@ -32,8 +32,6 @@ class PetList extends Component {
                 </div>
             )
         });
-
-
         return (
             <div className="Pet-list">
                 {petList}
