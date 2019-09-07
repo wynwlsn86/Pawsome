@@ -1,7 +1,8 @@
 
 
 import React, { Component } from 'react';
-import ollyrhae from '../../assets/ollyrhae.jpg'
+import ollyrhae from '../../assets/ollyrhae.jpg';
+import './Home.css'
 
 
 
@@ -17,9 +18,10 @@ class Home extends Component {
     return (
       <div>
       <div>
-        <div class="Main">
+        <div className="Main-Home">
+          <div className="Wrapper-Home">
            <img src={ollyrhae} alt="pet photos" ALIGN="left"/>
-              <div class="About">
+              <div className="About-Home">
                 <h1>
                   Pawsome Animal Rescue
                 </h1>
@@ -43,6 +45,7 @@ class Home extends Component {
   we can be the voice that they don't have and help them find their happily
   ever afters.
                   </h4>
+                </div>
               </div>
          </div>
       </div>
@@ -52,5 +55,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-

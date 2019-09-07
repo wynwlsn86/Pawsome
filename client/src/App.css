@@ -4,7 +4,6 @@ body {
   background-color: gray;
 }
 
-
 .Main {
   background-color: white;
   border: solid palevioletred;
@@ -36,13 +35,6 @@ body {
 
 .Volunteers .Main {
   padding: 100px 0 200px 0;
-}
-
-.About {
-  min-width: 373px;
-  max-width: inherit;
-  min-height: 546px;
-  max-height: inherit;
 }
 
 .Message-field {
