@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import harvey from '../../assets/harvey.png'
+import './ContactUs.css'
 
 import {addVolunteer} from '../../services/volunteersApi'
 
@@ -55,64 +56,61 @@ class NewContactForm extends Component {
   render() {
     return (
     <div>
-    <div className="Main">
+    <div className="Main-Contact">
+      <div className='Wrapper-Contact'>
+        <img src={harvey} alt='pet photo' />
+        <div className='Wrapper-Contact-Form'>
+          <h1>Contact Us</h1>
+          <form className="Contact-Form" onSubmit={this.handleSubmitForm}>
+            <div>
+              <label>Name:</label>
+              <input
+                type="text"
+                name="name"
+                onChange={this.handleTextInput}
+                value={this.state.name}
+              />
+            </div>
 
-      <div className='Volunteers'>
+            <div>
+              <label>Phone:</label>
+              <input
+                type="text"
+                name="phone"
+                onChange={this.handleTextInput}
+                value={this.state.phone}
+              />
+            </div>
 
-        <img className="Form-photo-fill" src={harvey} alt='' />
+            <div>
+              <label>Email:</label>
+              <input
+                type="text"
+                name="email"
+                onChange={this.handleTextInput}
+                value={this.state.email}
+              />
+            </div>
 
-<div className='Wrapper'>
-<h1>Contact Us</h1>
-        <form className="Volunteer-form" onSubmit={this.handleSubmitForm}>
-          <div>
-            <label>Name:</label>
-            <input
-              type="text"
-              name="name"
-              onChange={this.handleTextInput}
-              value={this.state.name}
-            />
-          </div>
+            <div className='Message-field-contact'>
+              <label>Message:</label>
+              <input
+                type="text"
+                name="address"
+                onChange={this.handleTextInput}
+                value={this.state.address}
+              />
+            </div>
 
-          <div>
-            <label>Phone:</label>
-            <input
-              type="text"
-              name="phone"
-              onChange={this.handleTextInput}
-              value={this.state.phone}
-            />
-          </div>
+            <button>Submit</button>
+          </form>
 
-          <div>
-            <label>Email:</label>
-            <input
-              type="text"
-              name="email"
-              onChange={this.handleTextInput}
-              value={this.state.email}
-            />
-          </div>
-
-          <div className='Message-field'>
-            <label>Message:</label>
-            <input
-              type="text"
-              name="address"
-              onChange={this.handleTextInput}
-              value={this.state.address}
-            />
-          </div>
-
-          <button>Submit</button>
-        </form>
-
+        </div>
       </div>
-    </div>
-    </div>
-    </div>
-    )
-  }
+      </div>
+      </div>
+      )
+    }
 
 }
 
