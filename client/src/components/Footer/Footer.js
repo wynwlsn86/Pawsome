@@ -2,6 +2,7 @@ import React from 'react';
 import facebook from '../../assets/facebook.svg'
 import twitter from '../../assets/twitter.svg'
 import reddit from '../../assets/reddit.svg'
+import './Footer.css'
 
 const Footer = () => (
   <div className="Footer">

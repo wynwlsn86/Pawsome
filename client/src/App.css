@@ -122,32 +122,6 @@ a {
   display: block;
 }
 
-
-
-.Footer {
-  background-color: palevioletred;
-  position: sticky;
-  font-family: sans-serif;
-  font-size: 20pt;
-  background-image: linear-gradient(gray, lightpink, gray);
-}
-
-
-.Footer img {
-  width: 50%;
-  height: 50%;
-}
-
-.Footer ul, a, p {
-  padding-top: 10px;
-  padding-bottom: -10px;
-  font-size: 14pt;
-  display: flex;
-  justify-content: space-evenly;
-  list-style: none;
-}
-
-
 .Volunteers {
   display: flex;
   max-height: 700px;
@@ -347,7 +321,7 @@ a {
   flex-direction: column;
   justify-content: center;
  }
- 
+
  .button-fix button {
   width: 250px;
   justify-content: center;
@@ -365,7 +339,7 @@ a {
   color: palevioletred;
   cursor: pointer;
  }
- 
+
  .button-fix a {
   text-decoration: none;
   color: palevioletred;
@@ -374,14 +348,14 @@ a {
 
 
 
-/* 
+/*
 .button-fix-parent{
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 300px;
  } */
- 
+
  /* .button-fix button {
   width: 150px;
   justify-content: center;
@@ -395,7 +369,7 @@ a {
   cursor: pointer;
   justify-content: center;
  }
- 
+
  .button-fix a {
   widht: 100px;
   text-decoration: none;

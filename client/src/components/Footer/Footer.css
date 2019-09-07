@@ -1,0 +1,23 @@
+
+.Footer {
+  background-color: palevioletred;
+  position: sticky;
+  font-family: sans-serif;
+  font-size: 20pt;
+  background-image: linear-gradient(gray, lightpink, gray);
+}
+
+
+.Footer img {
+  width: 50%;
+  height: 50%;
+}
+
+.Footer ul, a, p {
+  padding-top: 10px;
+  padding-bottom: -10px;
+  font-size: 14pt;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
