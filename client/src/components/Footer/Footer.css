@@ -1,10 +1,9 @@
-
 .Footer {
   background-color: palevioletred;
   position: sticky;
   font-family: sans-serif;
   font-size: 20pt;
-  background-image: linear-gradient(gray, lightpink, gray);
+  background-image: linear-gradient(lightgray, lightpink, lightgray);
 }
 
 
