@@ -2,21 +2,18 @@ import React, { Component } from 'react';
 import logo from '../../assets/logoSmall.jpeg'
 import { Link } from 'react-router-dom';
 import './Header.css'
-import DrawerToggleButton from '../SideDrawer/DrawerToggleButton'
+import DrawerToggleButton from '../SideMenu/DrawerToggleButton'
 
 
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     if(this.props.authenticated){
       return(
         <div className="Navbar">
         <ul>
           <div>
-            <DrawerToggleButton />
+            <DrawerToggleButton click={this.props.drawerClickHandler}/>
           </div>
           <Link to='/'>
             <img src={logo} alt='' />
@@ -45,7 +42,7 @@ class Header extends Component {
       <div className="Navbar">
         <ul>
           <div>
-            <DrawerToggleButton />
+            <DrawerToggleButton click={this.props.drawerClickHandler}/>
           </div>
           <Link to='/'>
             <img src={logo} alt='' />

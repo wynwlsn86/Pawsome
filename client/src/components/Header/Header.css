@@ -1,7 +1,10 @@
 
 .Navbar {
-  position: sticky;
+  position: fixed;
+  top: -20px;
+  width: 100vw;
   margin: 0 10px 0 10px;
+  min-width: 840px;
 }
 
 .Navbar ul {
@@ -11,7 +14,9 @@
   color: #4E4351;
   padding: 20px 0 20px 0;
   background-color: white;
-  opacity: .9;
+  opacity: 1;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+
 }
 
 a {

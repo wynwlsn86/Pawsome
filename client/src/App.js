@@ -4,9 +4,9 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Main from './components/Main/Main';
 import { login } from './services/authApi';
-import SideDrawer from './components/SideDrawer/SideDrawer';
+import SideMenu from './components/SideMenu/SideMenu';
 import Backdrop from './components/Backdrop/Backdrop';
-import DrawerToggleButton from './components/SideDrawer/DrawerToggleButton';
+import DrawerToggleButton from './components/SideMenu/DrawerToggleButton';
 
 class App extends Component {
   constructor() {
@@ -54,11 +54,11 @@ class App extends Component {
   }
 
   render() {
-    let sideDrawer;
+    let sideMenu;
     let backdrop;
 
     if (this.state.sideDrawerOpen) {
-      sideDrawer = <SideDrawer drawerClickHandler={this.drawerToggleClickHandler}/>;
+      sideMenu = <SideMenu drawerClickHandler={this.drawerToggleClickHandler}/>;
       backdrop = <Backdrop click={this.backdropClickHandler}/>;
     }
     return (
@@ -68,9 +68,7 @@ class App extends Component {
           logOut={this.handleLogOut}
           drawerClickHandler={this.drawerToggleClickHandler}
         />
-        <SideDrawer />
-        <Backdrop />
-        {sideDrawer}
+        {sideMenu}
         {backdrop}
         <Main
           authenticated={this.state.authenticated}
