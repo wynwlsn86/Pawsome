@@ -1,0 +1,8 @@
+.Main-login {
+  background-color: white;
+  border: solid palevioletred;
+  display: flex;
+  max-height: 921px;
+  padding: 10px 200px 100px 200px;
+  margin: 180px 10px 55px 10px;
+}
