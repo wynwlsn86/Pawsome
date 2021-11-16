@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/wynwlsn86/Pawsome#readme",
   "dependencies": {
-    "aws-sdk": "^2.456.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.1",
     "bcrypt": "^3.0.6",
